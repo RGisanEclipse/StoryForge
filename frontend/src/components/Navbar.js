@@ -16,7 +16,6 @@ export default function Navbar(){
                     <a href="#" className="text-white mx-4">Community</a>
                     <a href="#" className="text-white mx-4">Write</a>
                     <a href="#" className="text-white mx-4">Login</a>
-                    <a href="#" className="text-white mx-4">Signup</a>
                 </div>
                 <div className="md:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
@@ -33,7 +32,6 @@ export default function Navbar(){
                     <a href="#" className="block text-white px-4 py-2">Community</a>
                     <a href="#" className="block text-white px-4 py-2">Write</a>
                     <a href="#" className="block text-white px-4 py-2">Login</a>
-                    <a href="#" className="block text-white px-4 py-2">Signup</a>
                 </div>
             </div>
         </nav>
