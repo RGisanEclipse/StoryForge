@@ -28,10 +28,10 @@ export default function Navbar(){
             )}
             <div className={`md:hidden fixed inset-y-0 right-0 bg-[#0f1925] w-48 lg:w-96 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out`}>
                 <div className="py-4 px-2">
-                    <a href="#" className="block text-white px-4 py-2">Browse</a>
-                    <a href="#" className="block text-white px-4 py-2">Community</a>
-                    <a href="#" className="block text-white px-4 py-2">Write</a>
-                    <a href="#" className="block text-white px-4 py-2">Login</a>
+                    <a href="#" className="block text-white px-4 py-2" onClick={() => setIsMenuOpen(false)}>Browse</a>
+                    <a href="#" className="block text-white px-4 py-2" onClick={() => setIsMenuOpen(false)}>Community</a>
+                    <a href="#" className="block text-white px-4 py-2" onClick={() => setIsMenuOpen(false)}>Write</a>
+                    <a href="#" className="block text-white px-4 py-2" onClick={() => setIsMenuOpen(false)}>Login</a>
                 </div>
             </div>
         </nav>
