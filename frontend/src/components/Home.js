@@ -28,7 +28,7 @@ export default function Home() {
           </div>
         </div>
         <div className="image-container w-5/12 hidden mt-20 md:block">
-          <img src={hero} alt="Image" className="w-100 h-100" />
+          <img src={hero} alt="Image" className="w-auto h-100" />
         </div>
       </div>
     </div>
