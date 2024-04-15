@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import hero from "../Hero.jpg";
+import hero from "../Hero.png";
 export default function Home() {
   return (
     <div>
@@ -27,7 +27,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="image-container w-5/12 hidden mt-20 md:block">
+        <div className="image-container w-5/12 hidden mt-20 md:block p-3">
           <img src={hero} alt="Image" className="w-auto h-100" />
         </div>
       </div>
