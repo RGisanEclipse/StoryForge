@@ -47,7 +47,7 @@ export default function Navbar() {
         ></div>
       )}
       <div
-        className={`md:hidden fixed inset-y-0 right-0 bg-[#0b0338] w-48 lg:w-96 transform ${
+        className={`md:hidden fixed inset-y-0 right-0 z-10 bg-[#0b0338] w-48 lg:w-96 transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out`}
       >
