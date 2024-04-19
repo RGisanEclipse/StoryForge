@@ -22,7 +22,7 @@ export default function CarouselTransition() {
           loop="true"
           transition={{ type: "tween", duration: 2 }}
           navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-0 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+            <div className="absolute bottom-0 left-2/4 z-50 flex -translate-x-2/4 gap-2 md:left-3/4">
               {new Array(length).fill("").map((_, i) => (
                 <span
                   key={i}
