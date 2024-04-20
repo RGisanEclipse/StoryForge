@@ -3,9 +3,15 @@ import laf from "../ChasingRed.png";
 import feather from "../feather.png";
 import whiteStag from "../white-stag.png";
 import QuoteBG from "../Quote.jpg";
+import carouselBG from "../carousel-bg.png";
 export default function CarouselTransition() {
   return (
-    <div className="justify-center items-center flex">
+    <div 
+    style={{
+      backgroundImage: `url(${carouselBG})`,
+      backgroundSize: "cover",
+    }}
+    className="justify-center items-center flex">
       <div
         style={{
           minHeight: "200px",
@@ -19,8 +25,8 @@ export default function CarouselTransition() {
       >
         <Carousel
           className="rounded-xl h-full w-full"
-          autoplay="true"
-          loop="true"
+          autoplay={true}
+          loop={true}
           transition={{ type: "tween", duration: 2 }}
           navigation={({ setActiveIndex, activeIndex, length }) => (
             <div className="absolute bottom-2 left-2/4 z-50 flex -translate-x-2/4 gap-2 md:left-3/4">
@@ -44,7 +50,7 @@ export default function CarouselTransition() {
               size="lg"
               onClick={handlePrev}
               className="!absolute top-2/4 left-4 -translate-y-2/4"
-              disabled="true"
+              disabled={true}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +75,7 @@ export default function CarouselTransition() {
               size="lg"
               onClick={handleNext}
               className="!absolute top-2/4 !right-4 -translate-y-2/4"
-              disabled="true"
+              disabled={true}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +120,8 @@ export default function CarouselTransition() {
               <p className="pl-10 text-gray-300 text-xs ms:text-sm lg:text-base">
                 Chasing Red was one of 2016's most read stories on StoryForge
                 and that was just the beginning for this Winnipeg-Manitoba-based
-                writer. Newly edited and expanded, the
-                book was split into two and hit bookstore shelves in 2017.
+                writer. Newly edited and expanded, the book was split into two
+                and hit bookstore shelves in 2017.
               </p>
             </div>
           </div>

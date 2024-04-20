@@ -1,8 +1,8 @@
 import blob from "../Blob.png";
 export default function HomeSectionTwo() {
   return (
-    <div>
-      <div className="flex flex-col items-center py-16 gap-5 px-5">
+    <div className="py-16">
+      <div className="flex flex-col items-center gap-5 px-5 mb-6">
         <h1 className="text-5xl font-medium text-center md:text-left">
           How StoryForge Works
         </h1>
