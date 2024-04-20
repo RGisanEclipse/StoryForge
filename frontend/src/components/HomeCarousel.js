@@ -114,8 +114,7 @@ export default function CarouselTransition() {
               <p className="pl-10 text-gray-300 text-xs ms:text-sm lg:text-base">
                 Chasing Red was one of 2016's most read stories on StoryForge
                 and that was just the beginning for this Winnipeg-Manitoba-based
-                writer. In a thing year, her explosive hit has racked up over
-                127 million reads on StoryForge. Newly edited and expanded, the
+                writer. Newly edited and expanded, the
                 book was split into two and hit bookstore shelves in 2017.
               </p>
             </div>
