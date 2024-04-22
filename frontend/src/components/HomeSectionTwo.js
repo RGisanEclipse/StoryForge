@@ -11,9 +11,9 @@ export default function HomeSectionTwo() {
           technology on StoryForge.
         </p>
       </div>
-      <div className="flex flex-col xl:flex-row py-5 px-5 items-center gap-4 xl:justify-center xl:items-start">
-        <div className="flex flex-row xl:flex-col gap-5">
-          <div className="flex flex-row gap-10 w-80 transition duration-200 ease-in-out transform hover:scale-105 lg:w-96">
+      <div className="flex flex-col xl:flex-row py-5 px-5 items-center gap-4 xl:justify-center xl:items-start ">
+        <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row gap-10 w-80 lg:w-96">
             <div className="text-8xl font-extrabold">1</div>
             <div className="flex flex-col gap-5">
               <h2 className="text-2xl font-semibold">Create</h2>
@@ -32,8 +32,8 @@ export default function HomeSectionTwo() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row xl:flex-col gap-5">
-          <div className="flex flex-row gap-10 w-80 transition duration-200 ease-in-out transform hover:scale-105 lg:w-96">
+        <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row gap-10 w-80 lg:w-96">
             <div className="text-8xl font-extrabold">2</div>
             <div className="flex flex-col gap-5">
               <h2 className="text-2xl font-semibold">Build</h2>
@@ -53,8 +53,8 @@ export default function HomeSectionTwo() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row xl:flex-col gap-5">
-          <div className="flex flex-row gap-10 w-80 transition duration-200 ease-in-out transform hover:scale-105 lg:w-96">
+        <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row gap-10 w-80 lg:w-96">
             <div className="text-8xl font-extrabold">3</div>
             <div className="flex flex-col gap-5">
               <h2 className="text-2xl font-semibold">Amplify</h2>
