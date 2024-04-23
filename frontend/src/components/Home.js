@@ -5,7 +5,9 @@ import Navbar from "./Navbar";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <div className="fixed top-0 w-full z-10">
+        <Navbar />
+      </div>
       <HomeSectionOne/>
       <HomeSectionTwo/>
       <Carousel/>
