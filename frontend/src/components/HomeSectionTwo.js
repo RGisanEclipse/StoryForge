@@ -1,17 +1,20 @@
 import blob from "../Blob.png";
 import RevealX from "./utils/RevealX";
+import RevealY from "./utils/RevealY";
 export default function HomeSectionTwo() {
   return (
     <div className="py-16">
-      <div className="flex flex-col items-center gap-5 px-5 mb-6">
-        <h1 className="text-5xl font-medium text-center md:text-left">
-          How StoryForge Works
-        </h1>
-        <p className="text-xl text-center lg:text-left">
-          Get your story discovered through the power of community and
-          technology on StoryForge.
-        </p>
-      </div>
+      <RevealY>
+        <div className="flex flex-col items-center gap-5 px-5 mb-6">
+          <h1 className="text-5xl font-medium text-center md:text-left">
+            How StoryForge Works
+          </h1>
+          <p className="text-xl text-center lg:text-left">
+            Get your story discovered through the power of community and
+            technology on StoryForge.
+          </p>
+        </div>
+      </RevealY>
       <div className="flex flex-col xl:flex-row py-5 px-5 items-center gap-4 xl:justify-center xl:items-start ">
         <RevealX>
           <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
