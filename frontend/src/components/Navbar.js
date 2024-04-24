@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../StoryForgeLogo.png";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
@@ -20,9 +21,9 @@ export default function Navbar() {
               className="h-10 w-auto mr-2"
             />
           </div>
-          <a href="#" className="text-white text-xl font-bold">
+          <Link to="/" className="text-white text-xl font-bold">
             STORY FORGE
-          </a>
+          </Link>
         </div>
         <div className="hidden md:flex">
           <a href="#" className="text-white mx-4 hover:text-navHover">
@@ -34,9 +35,9 @@ export default function Navbar() {
           <a href="#" className="text-white mx-4 hover:text-navHover">
             Write
           </a>
-          <a href="#" className="text-white mx-4 hover:text-navHover">
+          <Link to="/login" className="text-white mx-4 hover:text-navHover">
             Login
-          </a>
+          </Link>
         </div>
         <div className="md:hidden">
           <button

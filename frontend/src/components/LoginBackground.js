@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-
 const STAR_COLOR = '#fff';
 const STAR_SIZE = 3;
 const STAR_MIN_SCALE = 0.2;
@@ -11,7 +10,7 @@ const LoginBackground = () => {
 
   const generateStars = () => {
     const stars = [];
-    const numStars = Math.round((window.innerWidth * window.innerHeight) / 5000); // Adjust as needed
+    const numStars = Math.round((window.innerWidth * window.innerHeight) / 5000);
     for (let i = 0; i < numStars; i++) {
       stars.push({
         x: Math.random() * window.innerWidth,
@@ -33,9 +32,11 @@ const LoginBackground = () => {
 
   const resize = () => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    generateStars();
+    if (canvas) {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      generateStars();
+    }
   };
 
   const step = () => {
@@ -65,22 +66,24 @@ const LoginBackground = () => {
 
   const render = () => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    starsRef.current.forEach((star) => {
-      context.beginPath();
-      context.lineCap = 'round';
-      context.lineWidth = STAR_SIZE * star.z;
-      context.globalAlpha = 1;
-      context.strokeStyle = STAR_COLOR;
-      context.moveTo(star.x, star.y);
-      let tailX = 2;
-      let tailY = 2;
-      if (Math.abs(tailX) < 0.1) tailX = 0.5;
-      if (Math.abs(tailY) < 0.1) tailY = 0.5;
-      context.lineTo(star.x + tailX, star.y + tailY);
-      context.stroke();
-    });
+    if (canvas) {
+      const context = canvas.getContext('2d');
+      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      starsRef.current.forEach((star) => {
+        context.beginPath();
+        context.lineCap = 'round';
+        context.lineWidth = STAR_SIZE * star.z;
+        context.globalAlpha = 1;
+        context.strokeStyle = STAR_COLOR;
+        context.moveTo(star.x, star.y);
+        let tailX = 2;
+        let tailY = 2;
+        if (Math.abs(tailX) < 0.1) tailX = 0.5;
+        if (Math.abs(tailY) < 0.1) tailY = 0.5;
+        context.lineTo(star.x + tailX, star.y + tailY);
+        context.stroke();
+      });
+    }
   };
 
   useEffect(() => {
