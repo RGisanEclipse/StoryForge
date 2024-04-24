@@ -3,7 +3,7 @@ import bg from "../HeroBG.jpg";
 import RevealNX from "./utils/RevealNX";
 import RevealY from "./utils/RevealY";
 import RevealX from "./utils/RevealX";
-export default function HomeSectionOne() {
+export default function HomeSectionOne(){
   return (
     <div>
       <div
@@ -12,12 +12,14 @@ export default function HomeSectionOne() {
       >
         <div className="text-container w-80 lg:w-5/12">
           <RevealNX>
-            <h1 className="text-6xl font-bold text-center text-white sm:text-left">
-              Hi, we're StoryForge.
-            </h1>
+            <div className="py-2">
+              <h1 className="text-6xl font-bold text-center text-white sm:text-left">
+                Hi, we're StoryForge.
+              </h1>
+            </div>
           </RevealNX>
           <RevealX>
-            <p className="text-2xl my-10 text-center text-white sm:text-left">
+            <p className="text-2xl my-8 text-center text-white sm:text-left">
               The largest storytelling community
             </p>
             <p className="text-lg text-white">

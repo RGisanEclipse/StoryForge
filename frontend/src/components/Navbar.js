@@ -81,13 +81,9 @@ export default function Navbar() {
           >
             Write
           </a>
-          <a
-            href="#"
-            className="block text-white px-4 py-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link to="/login" className="block text-white px-4 py-2">
             Login
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

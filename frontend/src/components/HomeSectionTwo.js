@@ -17,7 +17,7 @@ export default function HomeSectionTwo() {
       </RevealY>
       <div className="flex flex-col xl:flex-row py-5 px-5 items-center gap-4 xl:justify-center xl:items-start ">
         <RevealX>
-          <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row xl:flex-col gap-5">
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">1</div>
               <div className="flex flex-col gap-5">
@@ -39,7 +39,7 @@ export default function HomeSectionTwo() {
           </div>
         </RevealX>
         <RevealX>
-          <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row xl:flex-col gap-5">
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">2</div>
               <div className="flex flex-col gap-5">
@@ -62,14 +62,14 @@ export default function HomeSectionTwo() {
           </div>
         </RevealX>
         <RevealX>
-          <div className="flex flex-row xl:flex-col gap-5 transition duration-200 ease-in-out transform hover:scale-105">
+          <div className="flex flex-row xl:flex-col gap-5">
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">3</div>
               <div className="flex flex-col gap-5">
                 <h2 className="text-2xl font-semibold">Amplify</h2>
                 <p className="w-56 h-32">
-                  Gain Wattpad Star status and get your story published or
-                  adapted into film or television with Wattpad WEBTOON Studios!
+                  Gain StoryForge Star status and get your story published or
+                  adapted into film or television with StoryForge Studios!
                 </p>
               </div>
             </div>
