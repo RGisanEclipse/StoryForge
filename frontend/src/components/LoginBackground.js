@@ -45,7 +45,7 @@ const LoginBackground = () => {
   };
 
   const update = () => {
-    const velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0001 }; // Reduced speed
+    const velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
     starsRef.current.forEach((star) => {
       star.x += velocity.x * star.z;
       star.y += velocity.y * star.z;
