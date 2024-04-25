@@ -100,7 +100,7 @@ export default function SignupForm() {
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
           <form>
             <RevealNX>
-              <div className="mb-4 flex justify-center">
+              <div className="mb-4 flex md:justify-center">
                 <Link to="/" className="text-white text-xl font-bold">
                   <img
                     src={logo}
@@ -184,7 +184,7 @@ export default function SignupForm() {
       <div className="flex justify-center mt-2 md:mt-10 lg:mt-20 ">
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
           <form>
-            <div className="mb-4 flex justify-center">
+            <div className="mb-4 flex md:justify-center">
               <Link to="/" className="text-white text-xl font-bold">
                 <img
                   src={logo}
