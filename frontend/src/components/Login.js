@@ -3,10 +3,11 @@ import LoginBackground from "./LoginBackground";
 import { useTypewriter } from "react-simple-typewriter";
 import SignupForm from "./SignupForm";
 import RevealY from "./utils/RevealY";
+
 export default function Login() {
   const [typeEffect] = useTypewriter({
     words: ["Sign in to StoryForge."],
-    typeSpeed: 120,
+    typeSpeed: 80,
   });
 
   return (
@@ -19,13 +20,8 @@ export default function Login() {
           </h1>
         </div>
         <RevealY>
-          <div
-            style={{
-              backdropFilter: "blur(3px)", 
-              borderRadius: "10px",
-            }}
-            className="blur-overlay my-5 w-80 lg:w-96"
-          >
+          <div className="relative overflow-hidden rounded-lg w-80 lg:w-96">
+            <div className="absolute inset-0 backdrop-blur-sm"></div>
             <SignupForm />
           </div>
         </RevealY>

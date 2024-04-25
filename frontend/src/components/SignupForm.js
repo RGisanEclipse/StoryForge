@@ -2,6 +2,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import React from "react";
 import logo from "../StoryForgeLogo.png";
 import RevealNX from "./utils/RevealNX";
+import { Link } from "react-router-dom";
 export default function SignupForm() {
   return (
     <Carousel
@@ -10,16 +11,16 @@ export default function SignupForm() {
       loop={false}
       transition={{ type: "tween", duration: 1.25 }}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-9 left-3/4 z-0 flex -translate-x-2/4 gap-2">
+        <div className="absolute top-1/4 right-0 z-0 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
               className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "hidden" : "w-8 h-2 text-white text-sm"
+                activeIndex === i ? "hidden" : "w-14 h-2 text-white text-sm"
               }`}
               onClick={() => setActiveIndex(i)}
             >
-              {i === 0 ? "Signup" : "Login"}
+              {i === 0 ? "Sign Up" : "Log In"}
             </span>
           ))}
         </div>
@@ -80,7 +81,13 @@ export default function SignupForm() {
           <form>
             <RevealNX>
               <div className="mb-4 flex justify-center">
-                <img src={logo} className="h-12 w-12 cursor-pointer" title="StoryForge | Back to home"/>
+                <Link to="/" className="text-white text-xl font-bold">
+                  <img
+                    src={logo}
+                    className="h-12 w-12 cursor-pointer"
+                    title="StoryForge | Home"
+                  />
+                </Link>
               </div>
             </RevealNX>
             <div className="mb-4">
@@ -127,9 +134,6 @@ export default function SignupForm() {
                 >
                   Sign Up
                 </button>
-                <div className="flex flex-row justify-between w-full px-5">
-                  <p className="text-sm text-white">Already have an account?</p>
-                </div>
               </div>
             </RevealNX>
           </form>
@@ -138,11 +142,15 @@ export default function SignupForm() {
       <div className="flex justify-center mt-2 md:mt-10 lg:mt-20 ">
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
           <form>
-            <RevealNX>
-              <div className="mb-4 flex justify-center">
-                <img src={logo} className="h-12 w-12" />
-              </div>
-            </RevealNX>
+            <div className="mb-4 flex justify-center">
+              <Link to="/" className="text-white text-xl font-bold">
+                <img
+                  src={logo}
+                  className="h-12 w-12 cursor-pointer"
+                  title="StoryForge | Home"
+                />
+              </Link>
+            </div>
             <div className="mb-4">
               <input
                 type="text"
@@ -161,16 +169,14 @@ export default function SignupForm() {
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
             </div>
-            <RevealNX>
-              <div className="flex flex-col items-center justify-between gap-3">
-                <button
-                  type="submit"
-                  className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300"
-                >
-                  Log In
-                </button>
-              </div>
-            </RevealNX>
+            <div className="flex flex-col items-center justify-between gap-3">
+              <button
+                type="submit"
+                className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300"
+              >
+                Log In
+              </button>
+            </div>
           </form>
         </div>
       </div>
