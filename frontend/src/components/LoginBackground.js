@@ -46,7 +46,7 @@ const LoginBackground = () => {
   };
 
   const update = () => {
-    const velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
+    const velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0003 };
     starsRef.current.forEach((star) => {
       star.x += velocity.x * star.z;
       star.y += velocity.y * star.z;
@@ -96,7 +96,7 @@ const LoginBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, background: '#0b0338', zIndex: -1 }} />;
+  return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, background: '#000000', zIndex: -1 }} />;
 };
 
 export default LoginBackground;
