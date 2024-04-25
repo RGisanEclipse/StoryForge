@@ -1,9 +1,29 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../StoryForgeLogo.png";
 import RevealNX from "./utils/RevealNX";
 import { Link } from "react-router-dom";
+
+import openedEyeImage from "../Open-Eye.png";
+import closedEyeImage from "../Closed-Eye.png";
+
 export default function SignupForm() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [reEnterPasswordVisible, setReEnterPasswordVisible] = useState(false);
+  const [loginPasswordVisible, setLoginPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevState) => !prevState);
+  };
+
+  const toggleReEnterPasswordVisibility = () => {
+    setReEnterPasswordVisible((prevState) => !prevState);
+  };
+
+  const toggleLoginPasswordVisibility = () => {
+    setLoginPasswordVisible((prevState) => !prevState);
+  };
+
   return (
     <Carousel
       className="rounded-xl h-full w-full"
@@ -16,7 +36,7 @@ export default function SignupForm() {
             <span
               key={i}
               className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "hidden" : "w-14 h-2 text-white text-sm"
+                activeIndex === i ? "hidden" : "w-14 h-5 text-white text-sm"
               }`}
               onClick={() => setActiveIndex(i)}
             >
@@ -108,23 +128,45 @@ export default function SignupForm() {
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 relative">
               <input
-                type="password"
+                type={passwordVisible ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="Password"
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
+              <button
+                type="button"
+                className="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none"
+                onClick={togglePasswordVisibility}
+              >
+                <img
+                  src={passwordVisible ? openedEyeImage : closedEyeImage}
+                  alt={passwordVisible ? "Hide password" : "Show password"}
+                  className="h-5 w-5 text-gray-400"
+                />
+              </button>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 relative">
               <input
-                type="password"
+                type={reEnterPasswordVisible ? "text" : "password"}
                 id="re-enter-password"
                 name="re-enter-password"
                 placeholder="Re-Enter Password"
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
+              <button
+                type="button"
+                className="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none"
+                onClick={toggleReEnterPasswordVisibility}
+              >
+                <img
+                  src={reEnterPasswordVisible ? openedEyeImage : closedEyeImage}
+                  alt={reEnterPasswordVisible ? "Hide password" : "Show password"}
+                  className="h-5 w-5 text-gray-400"
+                />
+              </button>
             </div>
             <RevealNX>
               <div className="flex flex-col items-center justify-between gap-3">
@@ -160,14 +202,25 @@ export default function SignupForm() {
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 relative">
               <input
-                type="password"
+                type={loginPasswordVisible ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="Password"
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
               />
+              <button
+                type="button"
+                className="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none"
+                onClick={toggleLoginPasswordVisibility}
+              >
+                <img
+                  src={loginPasswordVisible ? openedEyeImage : closedEyeImage}
+                  alt={loginPasswordVisible ? "Hide password" : "Show password"}
+                  className="h-5 w-5 text-gray-400"
+                />
+              </button>
             </div>
             <div className="flex flex-col items-center justify-between gap-3">
               <button
