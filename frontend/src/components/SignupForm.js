@@ -172,7 +172,7 @@ export default function SignupForm() {
               <div className="flex flex-col items-center justify-between gap-3">
                 <button
                   type="submit"
-                  className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron"
+                  className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron mt-3"
                 >
                   Sign Up
                 </button>
@@ -222,10 +222,13 @@ export default function SignupForm() {
                 />
               </button>
             </div>
+            <div className="flex items-center justify-center text-gray-200 font-orbitron mt-5">
+              Forgot Password?
+            </div>
             <div className="flex flex-col items-center justify-between gap-3">
               <button
                 type="submit"
-                className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron"
+                className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron mt-5"
               >
                 Log In
               </button>
