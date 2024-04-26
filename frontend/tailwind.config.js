@@ -8,6 +8,10 @@ module.exports = withMT({
       colors: {
         navHover: '#e0474d',
       },
+      fontFamily:{
+        "orbitron":["orbitron","sans-serif"],
+        "russoOne":["russoOne","sans-serif"],
+      }
     },
   },
   plugins: [],

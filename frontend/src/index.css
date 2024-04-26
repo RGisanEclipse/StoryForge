@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: orbitron;
+    src: url("../public/fonts/Orbitron-VariableFont_wght.ttf");
+}
+@font-face{
+    font-family: russoOne;
+    src: url("../public/fonts/RussoOne-Regular.ttf");
+}

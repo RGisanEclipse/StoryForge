@@ -36,7 +36,7 @@ export default function SignupForm() {
             <span
               key={i}
               className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "hidden" : "w-14 h-5 text-white text-sm"
+                activeIndex === i ? "hidden" : "w-16 h-5 text-white text-sm font-orbitron"
               }`}
               onClick={() => setActiveIndex(i)}
             >
@@ -116,7 +116,7 @@ export default function SignupForm() {
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
             <div className="mb-4">
@@ -125,7 +125,7 @@ export default function SignupForm() {
                 id="name"
                 name="name"
                 placeholder="Username"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
             <div className="mb-4 relative">
@@ -134,7 +134,7 @@ export default function SignupForm() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
                 type="button"
@@ -154,7 +154,7 @@ export default function SignupForm() {
                 id="re-enter-password"
                 name="re-enter-password"
                 placeholder="Re-Enter Password"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
                 type="button"
@@ -172,7 +172,7 @@ export default function SignupForm() {
               <div className="flex flex-col items-center justify-between gap-3">
                 <button
                   type="submit"
-                  className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300"
+                  className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron"
                 >
                   Sign Up
                 </button>
@@ -199,7 +199,7 @@ export default function SignupForm() {
                 id="name"
                 name="name"
                 placeholder="Email or Username"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
             <div className="mb-4 relative">
@@ -208,7 +208,7 @@ export default function SignupForm() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200"
+                className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
                 type="button"
@@ -225,7 +225,7 @@ export default function SignupForm() {
             <div className="flex flex-col items-center justify-between gap-3">
               <button
                 type="submit"
-                className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300"
+                className="py-1 px-4 bg-[#fff] text-black rounded-md focus:outline-none hover:bg-gray-300 font-orbitron"
               >
                 Log In
               </button>
