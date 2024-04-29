@@ -36,7 +36,9 @@ export default function SignupForm() {
             <span
               key={i}
               className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "hidden" : "w-16 h-5 text-white text-sm font-orbitron"
+                activeIndex === i
+                  ? "hidden"
+                  : "w-16 h-5 text-white text-sm font-orbitron"
               }`}
               onClick={() => setActiveIndex(i)}
             >
@@ -163,7 +165,9 @@ export default function SignupForm() {
               >
                 <img
                   src={reEnterPasswordVisible ? openedEyeImage : closedEyeImage}
-                  alt={reEnterPasswordVisible ? "Hide password" : "Show password"}
+                  alt={
+                    reEnterPasswordVisible ? "Hide password" : "Show password"
+                  }
                   className="h-5 w-5 text-gray-400"
                 />
               </button>
@@ -196,8 +200,8 @@ export default function SignupForm() {
             <div className="mb-4">
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="nameLogin"
+                name="nameLogin"
                 placeholder="Email or Username"
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
@@ -205,8 +209,8 @@ export default function SignupForm() {
             <div className="mb-4 relative">
               <input
                 type={loginPasswordVisible ? "text" : "password"}
-                id="password"
-                name="password"
+                id="passwordLogin"
+                name="passwordLogin"
                 placeholder="Password"
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
