@@ -10,3 +10,11 @@
     font-family: russoOne;
     src: url("../public/fonts/RussoOne-Regular.ttf");
 }
+@font-face{
+    font-family: montserrat;
+    src: url("../public/fonts/Montserrat-VariableFont_wght.ttf");
+}
+@font-face{
+    font-family: manrope;
+    src: url("../public/fonts/Manrope-VariableFont_wght.ttf");
+}

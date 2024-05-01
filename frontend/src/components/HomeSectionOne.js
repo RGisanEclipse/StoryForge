@@ -13,16 +13,16 @@ export default function HomeSectionOne(){
         <div className="text-container w-80 lg:w-5/12">
           <RevealNX>
             <div className="py-2">
-              <h1 className="text-6xl font-bold text-center text-white sm:text-left">
+              <h1 className="text-6xl font-medium text-center text-white sm:text-left font-montserrat">
                 Hi, we're StoryForge.
               </h1>
             </div>
           </RevealNX>
           <RevealX>
-            <p className="text-2xl my-8 text-center text-white sm:text-left">
+            <p className="text-2xl my-8 text-center text-white sm:text-left font-manrope">
               The largest storytelling community
             </p>
-            <p className="text-lg text-white">
+            <p className="text-lg text-white font-manrope">
               Home to 97 million people who spend over 26 billion minutes a
               month engaged in original stories, StoryForge has democratized
               storytelling for a new generation of diverse Gen Z writers and

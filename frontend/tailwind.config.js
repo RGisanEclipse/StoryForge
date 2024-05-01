@@ -11,6 +11,8 @@ module.exports = withMT({
       fontFamily:{
         "orbitron":["orbitron","sans-serif"],
         "russoOne":["russoOne","sans-serif"],
+        "montserrat":["montserrat","serif"],
+        "manrope":["manrope","serif"],
       }
     },
   },
