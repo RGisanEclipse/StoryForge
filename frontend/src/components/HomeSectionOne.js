@@ -13,7 +13,7 @@ export default function HomeSectionOne(){
         <div className="text-container w-80 lg:w-5/12">
           <RevealNX>
             <div className="py-2">
-              <h1 className="text-6xl font-medium text-center text-white sm:text-left font-montserrat">
+              <h1 className="text-5xl xl:text-6xl font-medium text-center text-white sm:text-left font-montserrat">
                 Hi, we're StoryForge.
               </h1>
             </div>
