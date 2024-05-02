@@ -6,12 +6,13 @@ import QuoteBG from "../Quote.jpg";
 import carouselBG from "../carousel-bg.png";
 export default function CarouselTransition() {
   return (
-    <div 
-    style={{
-      backgroundImage: `url(${carouselBG})`,
-      backgroundSize: "cover",
-    }}
-    className="justify-center items-center flex">
+    <div
+      style={{
+        backgroundImage: `url(${carouselBG})`,
+        backgroundSize: "cover",
+      }}
+      className="justify-center items-center flex"
+    >
       <div
         style={{
           minHeight: "200px",
@@ -104,10 +105,10 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={laf} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-5 md:w-1/2 p-2">
+            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
-                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white">
+                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
                   The StoryForge Stars Program gave me opportunities I never
                   thought possible. It connected me to a world that I had only
                   imagined. I don't know how else to say it. It changed my life!
@@ -117,11 +118,10 @@ export default function CarouselTransition() {
                 {" "}
                 Isabelle Ronin (@ISABELLERONIN)
               </cite>
-              <p className="pl-10 text-gray-300 text-xs ms:text-sm lg:text-base">
-                Chasing Red was one of 2016's most read stories on StoryForge
-                and that was just the beginning for this Winnipeg-Manitoba-based
-                writer. Newly edited and expanded, the book was split into two
-                and hit bookstore shelves in 2017.
+              <p className="pl-10 text-gray-300 text-xs ms:text-sm lg:text-base font-manrope">
+                Chasing Red was one of 2016's most read stories on StoryForge.
+                Newly edited and expanded, the book was split into two and hit
+                bookstore shelves in 2017.
               </p>
             </div>
           </div>
@@ -135,10 +135,10 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={feather} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-5 md:w-1/2 p-2">
+            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
-                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white">
+                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
                   Having been active on StoryForge for several years, I knew it
                   woud be the perfect platform for a thriller with lots of
                   cliffhangers for readers to discuss. Teen horror is my
@@ -149,7 +149,7 @@ export default function CarouselTransition() {
                 {" "}
                 Zoe Aarsen (@ZAARSENIST)
               </cite>
-              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base">
+              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
                 Zoe Aarsen is a graphic designer and copyrighter. Her first
                 paranormal YA novel, Light as a Feather, Stiff as a Board, is
                 being published by Simon & Schuster and turned into a television
@@ -167,10 +167,10 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={whiteStag} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-5 md:w-1/2 p-2">
+            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
-                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white">
+                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
                   Working with StoryForge Studios is like a dream. Not only do
                   they care about your success, but also staying true to your
                   vision.
@@ -180,7 +180,7 @@ export default function CarouselTransition() {
                 {" "}
                 Kara Barbieri (@PANDEAN)
               </cite>
-              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base">
+              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
                 Kara barbieri is a twenty-two year old author with a love for
                 the weird and mystic. Her debut novel, WHITE STAG, will be
                 published by Wednesday Books/Macmillan in January 2019.

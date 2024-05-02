@@ -18,14 +18,14 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Story Forge Logo"
-              className="h-10 w-auto mr-2"
+              className="h-10 w-auto mr-4"
             />
           </div>
           <Link to="/" className="text-white text-xl font-medium font-montserrat hover:text-navHover">
             STORY FORGE
           </Link>
         </div>
-        <div className="hidden md:flex font-orbitron">
+        <div className="hidden md:flex font-montserrat">
           <a href="#" className="text-white mx-4 hover:text-navHover">
             Browse
           </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
         ></div>
       )}
       <div
-        className={`md:hidden fixed inset-y-0 right-0 z-10 bg-[#0b0338] w-48 lg:w-96 transform font-orbitron ${
+        className={`md:hidden fixed inset-y-0 right-0 z-10 bg-[#0b0338] w-48 lg:w-96 transform font-montserrat ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out`}
       >
