@@ -3,7 +3,7 @@ import RevealX from "./utils/RevealX";
 import RevealY from "./utils/RevealY";
 export default function HomeSectionTwo() {
   return (
-    <div className="py-16">
+    <div className="py-8">
       <RevealY>
         <div className="flex flex-col items-center gap-5 px-5 mb-6">
           <h1 className="text-5xl font-medium text-center md:text-left font-montserrat">
