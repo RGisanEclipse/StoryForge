@@ -11,8 +11,8 @@
 .custom-shape-divider-bottom-1714759139 svg {
     position: relative;
     display: block;
-    width: calc(150% + 1.3px);
-    height: 179px;
+    width: 100%; /* Set width to 100% for responsiveness */
+    height: auto; /* Let the height adjust proportionally */
 }
 
 .custom-shape-divider-bottom-1714759139 .shape-fill {
@@ -36,4 +36,9 @@
 
 .custom-shape-divider-top-1714759530 .shape-fill {
     fill: #FFFFFF;
+}
+@media only screen and (max-width: 768px) {
+    .custom-shape-divider-bottom-1714759139 svg {
+        width: calc(120% + 1.3px); /* Adjust width for smaller screens */
+    }
 }
