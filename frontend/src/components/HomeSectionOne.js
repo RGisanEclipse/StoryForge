@@ -3,13 +3,16 @@ import bg from "../HeroBG.jpg";
 import RevealNX from "./utils/RevealNX";
 import RevealY from "./utils/RevealY";
 import RevealX from "./utils/RevealX";
-export default function HomeSectionOne(){
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+export default function HomeSectionOne() {
   return (
-    <div>
-      <div
-        style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
-        className="py-20 flex flex-col gap-8 justify-center items-center sm:flex-row sm:items-start lg:pt-36"
-      >
+    <div
+      style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
+      className="flex flex-col"
+    >
+      <div className="py-16 flex flex-col gap-8 justify-center items-center sm:flex-row sm:items-start lg:pt-36">
         <div className="text-container w-80 lg:w-5/12">
           <RevealNX>
             <div className="py-2">
@@ -42,6 +45,39 @@ export default function HomeSectionOne(){
           <RevealY>
             <img src={hero} alt="Image" className="w-auto h-100" />
           </RevealY>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center gap-5 pb-12">
+        <RevealX>
+          <h1 className="text-white font-montserrat font-semibold text-3xl">
+            See your story...
+          </h1>
+        </RevealX>
+        <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-24">
+          <RevealNX>
+            <div className="flex flex-col items-center justify-center gap-3 xl:w-56">
+              <LiveTvIcon className="text-white" style={{ fontSize: "50px" }} />
+              <div className="text-white text-center">Get produced to movie or film</div>
+            </div>
+          </RevealNX>
+          <RevealNX>
+            <div className="flex flex-col items-center justify-center gap-3 xl:w-56">
+              <LocalMoviesIcon
+                className="text-white"
+                style={{ fontSize: "50px" }}
+              />
+              <div className="text-white text-center">Get adapted to a TV series</div>
+            </div>
+          </RevealNX>
+          <RevealNX>
+            <div className="flex flex-col items-center justify-center gap-3 xl:w-56">
+              <LibraryBooksIcon
+                className="text-white"
+                style={{ fontSize: "50px" }}
+              />
+              <div className="text-white text-center">Get published</div>
+            </div>
+          </RevealNX>
         </div>
       </div>
     </div>
