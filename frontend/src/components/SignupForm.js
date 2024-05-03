@@ -33,7 +33,7 @@ export default function SignupForm() {
       loop={false}
       transition={{ type: "tween", duration: 1.25 }}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute top-12 right-0 z-0 flex -translate-x-2/4 gap-2 md:top-20 lg:top-1/4">
+        <div className="absolute top-12 right-0 z-0 flex -translate-x-2/4 gap-2 md:top-20 lg:top-32">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
