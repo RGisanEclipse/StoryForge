@@ -57,7 +57,7 @@ export default function HomeSectionOne() {
           <RevealNX>
             <div className="flex flex-col items-center justify-center gap-3 xl:w-56">
               <LiveTvIcon className="text-white" style={{ fontSize: "50px" }} />
-              <div className="text-white text-center">Get produced to movie or film</div>
+              <div className="text-white text-center font-manrope">Get produced to movie or film</div>
             </div>
           </RevealNX>
           <RevealNX>
@@ -66,7 +66,7 @@ export default function HomeSectionOne() {
                 className="text-white"
                 style={{ fontSize: "50px" }}
               />
-              <div className="text-white text-center">Get adapted to a TV series</div>
+              <div className="text-white text-center font-manrope">Get adapted to a TV series</div>
             </div>
           </RevealNX>
           <RevealNX>
@@ -75,7 +75,7 @@ export default function HomeSectionOne() {
                 className="text-white"
                 style={{ fontSize: "50px" }}
               />
-              <div className="text-white text-center">Get published</div>
+              <div className="text-white text-center font-manrope">Get published</div>
             </div>
           </RevealNX>
         </div>
