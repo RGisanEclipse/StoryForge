@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import logo from "../StoryForgeLogo.png";
 import RevealNX from "./utils/RevealNX";
 import { Link } from "react-router-dom";
-
+import GoogleIcon from "@mui/icons-material/Google";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from '@mui/icons-material/Twitter';
 import openedEyeImage from "../Open-Eye.png";
 import closedEyeImage from "../Closed-Eye.png";
 
@@ -180,6 +182,31 @@ export default function SignupForm() {
                 >
                   Sign Up
                 </button>
+              </div>
+              <div className="pt-5 flex flex-col gap-3 items-center">
+                <div className="text-gray-300 font-orbitron">
+                  Or Sign up with
+                </div>
+                <div className="flex flex-row justify-between gap-10">
+                  <div>
+                    <GoogleIcon
+                      className="text-gray-500 hover:text-yellow-300 cursor-pointer"
+                      style={{ fontSize: "50px" }}
+                    />
+                  </div>
+                  <div>
+                    <FacebookIcon
+                      className="text-gray-500 hover:text-blue-800 cursor-pointer"
+                      style={{ fontSize: "50px" }}
+                    />
+                  </div>
+                  <div>
+                    <TwitterIcon
+                      className="text-gray-500 hover:text-blue-300 cursor-pointer"
+                      style={{ fontSize: "50px" }}
+                    />
+                  </div>
+                </div>
               </div>
             </RevealNX>
           </form>

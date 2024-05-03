@@ -12,7 +12,7 @@ export default function HomeSectionOne() {
       style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
       className="flex flex-col"
     >
-      <div className="py-16 flex flex-col gap-8 justify-center items-center sm:flex-row sm:items-start lg:pt-36">
+      <div className="pt-20 flex flex-col gap-8 justify-center items-center sm:flex-row sm:items-center">
         <div className="text-container w-80 lg:w-5/12">
           <RevealNX>
             <div className="py-2">
@@ -25,7 +25,7 @@ export default function HomeSectionOne() {
             <p className="text-2xl my-8 text-center text-white sm:text-left font-manrope">
               The largest storytelling community
             </p>
-            <p className="text-lg text-white font-manrope">
+            <p style={{maxWidth:"800px"}}className="text-lg text-white font-manrope">
               Home to 97 million people who spend over 26 billion minutes a
               month engaged in original stories, StoryForge has democratized
               storytelling for a new generation of diverse Gen Z writers and
