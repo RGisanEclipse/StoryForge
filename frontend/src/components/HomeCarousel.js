@@ -3,6 +3,7 @@ import laf from "../ChasingRed.png";
 import feather from "../feather.png";
 import whiteStag from "../white-stag.png";
 import carouselBG from "../HeroBG.jpg";
+import quotation from "../QuotationMark.png";
 export default function CarouselTransition() {
   return (
     <div
@@ -120,7 +121,7 @@ export default function CarouselTransition() {
             </div>
             <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
-                <h1 className="text-7xl inline text-blue-500">"</h1>
+                <img src={quotation} className="inline h-10 w-12" />
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
                   The StoryForge Stars Program gave me opportunities I never
                   thought possible. It connected me to a world that I had only
@@ -149,7 +150,7 @@ export default function CarouselTransition() {
             </div>
             <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
-                <h1 className="text-7xl inline text-blue-500">"</h1>
+                <img src={quotation} className="inline h-10 w-12" />
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat ">
                   Having been active on StoryForge for several years, I knew it
                   woud be the perfect platform for a thriller with lots of
@@ -180,7 +181,7 @@ export default function CarouselTransition() {
             </div>
             <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
-                <h1 className="text-7xl inline text-blue-500">"</h1>
+                <img src={quotation} className="inline h-10 w-12" />
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
                   Working with StoryForge Studios is like a dream. Not only do
                   they care about your success, but also staying true to your

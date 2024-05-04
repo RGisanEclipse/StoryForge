@@ -1,5 +1,6 @@
 import React from "react";
-import originals from "../Originals.PNG";
+import originals from "../Originals.jpg";
+import sf from "../StoryForgies.png";
 import contests from "../writing-contests.jpg";
 import RevealX from "./utils/RevealX";
 import RevealY from "./utils/RevealY";
@@ -13,9 +14,9 @@ export default function HomeSectionThree() {
           </h1>
         </div>
       </RevealX>
-      <div className="flex flex-col gap-16 pt-10 md:flex-row md:gap-20 flex-wrap items-center justify-center">
+      <div className="flex flex-col gap-16 pt-10 md:flex-row md:gap-20 flex-wrap justify-center">
         <RevealY>
-          <div>
+          <div className="flex flex-col items-center">
             <div className="h-64 w-64 shadow-[34px_34px_8px_12px_#0b0338]">
               <img src={contests} className="w-full h-full" />
             </div>
@@ -31,7 +32,23 @@ export default function HomeSectionThree() {
           </div>
         </RevealY>
         <RevealY>
-          <div>
+          <div className="flex flex-col items-center">
+            <div className="h-64 w-64 shadow-[34px_34px_8px_12px_#0b0338]">
+              <img src={sf} className="w-full h-full" />
+            </div>
+            <div className="mt-20 pl-5">
+              <h1 className="text-xl font-montserrat font-semibold">
+                The StoryForgies
+              </h1>
+              <p className="w-80 mt-5 font-manrope">
+                StoryForge's annual awards program committed to celebrate the
+                best stories around the world.
+              </p>
+            </div>
+          </div>
+        </RevealY>
+        <RevealY>
+          <div className="flex flex-col items-center">
             <div className="h-64 w-64 shadow-[34px_34px_8px_12px_#0b0338]">
               <img src={originals} className="w-full h-full" />
             </div>
