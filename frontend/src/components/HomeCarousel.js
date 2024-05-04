@@ -35,11 +35,12 @@ export default function CarouselTransition() {
           height: "60vh",
           width: "80vw",
         }}
-        className="my-10 md:my-20"
+        className="mb-4 xl:my-20"
       >
         <Carousel
           className="rounded-xl h-full w-full"
           autoplay={true}
+          autoplayDelay={10000}
           loop={true}
           transition={{ type: "tween", duration: 2 }}
           navigation={({ setActiveIndex, activeIndex, length }) => (
@@ -117,7 +118,7 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={laf} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
+            <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
@@ -126,7 +127,7 @@ export default function CarouselTransition() {
                   imagined. I don't know how else to say it. It changed my life!
                 </p>
               </div>
-              <cite className="text-right text-white text-sm lg:text-xl">
+              <cite className="text-right text-gray-200 text-sm lg:text-xl">
                 {" "}
                 Isabelle Ronin (@ISABELLERONIN)
               </cite>
@@ -146,7 +147,7 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={feather} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
+            <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat ">
@@ -156,7 +157,7 @@ export default function CarouselTransition() {
                   passion.
                 </p>
               </div>
-              <cite className="text-right text-white text-sm lg:text-xl">
+              <cite className="text-right text-gray-200 text-sm lg:text-xl">
                 {" "}
                 Zoe Aarsen (@ZAARSENIST)
               </cite>
@@ -177,7 +178,7 @@ export default function CarouselTransition() {
             <div className="h-full items-center justify-center hidden md:flex">
               <img src={whiteStag} className="h-96 w-80" />
             </div>
-            <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
+            <div className="h-full w-full flex flex-col pt-10 gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
                 <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
@@ -186,7 +187,7 @@ export default function CarouselTransition() {
                   vision.
                 </p>
               </div>
-              <cite className="text-right text-white text-sm lg:text-xl">
+              <cite className="text-right text-gray-200 text-sm lg:text-xl">
                 {" "}
                 Kara Barbieri (@PANDEAN)
               </cite>

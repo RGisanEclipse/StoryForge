@@ -13,7 +13,7 @@ export default function HomeSectionThree() {
           </h1>
         </div>
       </RevealX>
-      <div className="flex flex-col gap-16 pt-20 md:flex-row md:gap-20 flex-wrap items-center justify-center">
+      <div className="flex flex-col gap-16 pt-10 md:flex-row md:gap-20 flex-wrap items-center justify-center">
         <RevealY>
           <div>
             <div className="h-64 w-64 shadow-[34px_34px_8px_12px_#0b0338]">
