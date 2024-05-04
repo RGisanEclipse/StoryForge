@@ -21,7 +21,7 @@ export default function Navbar() {
               className="h-10 w-auto mr-4"
             />
           </div>
-          <Link to="/" className="text-white text-xl font-medium font-montserrat hover:text-navHover">
+          <Link to="/" className="text-white text-xl font-medium font-montserrat">
             STORY FORGE
           </Link>
         </div>
