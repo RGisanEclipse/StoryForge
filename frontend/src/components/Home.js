@@ -2,6 +2,7 @@ import HomeSectionOne from "./HomeSectionOne";
 import HomeSectionTwo from "./HomeSectionTwo";
 import Carousel from "./HomeCarousel";
 import Navbar from "./Navbar";
+import HomeSectionThree from "./HomeSectionThree";
 export default function Home() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function Home() {
       </div>
       <HomeSectionOne/>
       <HomeSectionTwo/>
+      <HomeSectionThree/>
       <Carousel/>
     </div>
   );

@@ -2,8 +2,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import laf from "../ChasingRed.png";
 import feather from "../feather.png";
 import whiteStag from "../white-stag.png";
-import QuoteBG from "../Quote.jpg";
-import carouselBG from "../carousel-bg.png";
+import carouselBG from "../HeroBG.jpg";
 export default function CarouselTransition() {
   return (
     <div
@@ -12,7 +11,7 @@ export default function CarouselTransition() {
         backgroundSize: "cover",
         position: "relative",
       }}
-      className="justify-center items-center flex pt-32"
+      className="justify-center items-center flex pt-20"
     >
       <div className="custom-shape-divider-top-1714759530">
         <svg
@@ -36,7 +35,7 @@ export default function CarouselTransition() {
           height: "60vh",
           width: "80vw",
         }}
-        className="my-10"
+        className="my-10 md:my-20"
       >
         <Carousel
           className="rounded-xl h-full w-full"
@@ -111,7 +110,6 @@ export default function CarouselTransition() {
         >
           <div
             style={{
-              backgroundImage: `url(${QuoteBG})`,
               backgroundSize: "cover",
             }}
             className="h-full w-full flex flex-col items-center justify-center md:flex-row"
@@ -128,7 +126,7 @@ export default function CarouselTransition() {
                   imagined. I don't know how else to say it. It changed my life!
                 </p>
               </div>
-              <cite className="text-right text-gray-500 text-sm lg:text-xl">
+              <cite className="text-right text-white text-sm lg:text-xl">
                 {" "}
                 Isabelle Ronin (@ISABELLERONIN)
               </cite>
@@ -141,7 +139,6 @@ export default function CarouselTransition() {
           </div>
           <div
             style={{
-              backgroundImage: `url(${QuoteBG})`,
               backgroundSize: "cover",
             }}
             className="h-full w-full flex flex-row items-center justify-center"
@@ -152,14 +149,14 @@ export default function CarouselTransition() {
             <div className="h-full w-full flex flex-col justify-center gap-3 md:w-1/2 p-2 md:gap-5">
               <div className="justify-center flex">
                 <h1 className="text-7xl inline text-blue-500">"</h1>
-                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat">
+                <p className="text-base inline mx-2 md:text-xl lg:text-2xl font-semibold text-white font-montserrat ">
                   Having been active on StoryForge for several years, I knew it
                   woud be the perfect platform for a thriller with lots of
                   cliffhangers for readers to discuss. Teen horror is my
                   passion.
                 </p>
               </div>
-              <cite className="text-right text-gray-500 text-sm lg:text-xl">
+              <cite className="text-right text-white text-sm lg:text-xl">
                 {" "}
                 Zoe Aarsen (@ZAARSENIST)
               </cite>
@@ -173,7 +170,6 @@ export default function CarouselTransition() {
           </div>
           <div
             style={{
-              backgroundImage: `url(${QuoteBG})`,
               backgroundSize: "cover",
             }}
             className="h-full w-full flex flex-row items-center justify-center"
@@ -190,7 +186,7 @@ export default function CarouselTransition() {
                   vision.
                 </p>
               </div>
-              <cite className="text-right text-gray-500 text-sm lg:text-xl">
+              <cite className="text-right text-white text-sm lg:text-xl">
                 {" "}
                 Kara Barbieri (@PANDEAN)
               </cite>
