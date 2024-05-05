@@ -7,6 +7,7 @@ module.exports = withMT({
     extend: {
       colors: {
         navHover: '#e0474d',
+        discoverHover: '#53bfdc',
       },
       fontFamily:{
         "orbitron":["orbitron","sans-serif"],

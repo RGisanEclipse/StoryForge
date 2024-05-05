@@ -4,7 +4,7 @@ import logo from "../StoryForgeLogo.png";
 import RevealNX from "./utils/RevealNX";
 import { Link } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import openedEyeImage from "../Open-Eye.png";
 import closedEyeImage from "../Closed-Eye.png";
@@ -195,7 +195,7 @@ export default function SignupForm() {
                     />
                   </div>
                   <div>
-                    <FacebookIcon
+                    <FacebookSharpIcon
                       className="text-gray-500 cursor-pointer"
                       style={{ fontSize: "50px" }}
                     />

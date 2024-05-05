@@ -21,9 +21,11 @@ export default function HomeSectionThree() {
               <img src={contests} className="w-full h-full" />
             </div>
             <div className="mt-20 pl-5">
-              <h1 className="text-xl font-montserrat font-semibold">
-                Writing Contests
-              </h1>
+              <a href="#" className="hover:text-discoverHover">
+                <h1 className="text-xl font-montserrat font-semibold">
+                  Writing Contests
+                </h1>
+              </a>
               <p className="w-80 mt-5 font-manrope">
                 Enter writing contests to get published, win awards, and partner
                 with global brands.
@@ -37,9 +39,11 @@ export default function HomeSectionThree() {
               <img src={sf} className="w-full h-full" />
             </div>
             <div className="mt-20 pl-5">
-              <h1 className="text-xl font-montserrat font-semibold">
-                The StoryForgies
-              </h1>
+              <a href="#" className="hover:text-discoverHover">
+                <h1 className="text-xl font-montserrat font-semibold">
+                  The StoryForgies
+                </h1>
+              </a>
               <p className="w-80 mt-5 font-manrope">
                 StoryForge's annual awards program committed to celebrate the
                 best stories around the world.
@@ -53,9 +57,11 @@ export default function HomeSectionThree() {
               <img src={originals} className="w-full h-full" />
             </div>
             <div className="mt-20 pl-5">
-              <h1 className="text-xl font-montserrat font-semibold">
-                StoryForge Picks
-              </h1>
+              <a href="#" className="hover:text-discoverHover">
+                <h1 className="text-xl font-montserrat font-semibold">
+                  StoryForge Picks
+                </h1>
+              </a>
               <p className="w-80 mt-5 font-manrope">
                 Get featured on our hand-picked reading list.
               </p>
