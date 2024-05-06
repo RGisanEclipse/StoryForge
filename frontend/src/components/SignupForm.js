@@ -190,19 +190,19 @@ export default function SignupForm() {
                 <div className="flex flex-row justify-between gap-10">
                   <div>
                     <GoogleIcon
-                      className="text-gray-500 cursor-pointer"
+                      className="text-gray-400 cursor-pointer"
                       style={{ fontSize: "50px" }}
                     />
                   </div>
                   <div>
                     <FacebookSharpIcon
-                      className="text-gray-500 cursor-pointer"
+                      className="text-gray-400 cursor-pointer"
                       style={{ fontSize: "50px" }}
                     />
                   </div>
                   <div>
                     <TwitterIcon
-                      className="text-gray-500 cursor-pointer"
+                      className="text-gray-400 cursor-pointer"
                       style={{ fontSize: "50px" }}
                     />
                   </div>
