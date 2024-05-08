@@ -1,4 +1,4 @@
-import Home from "./components/Home";
+import Home from "./components/Home.js";
 import Login from "./components/Login.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -6,8 +6,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home />}/>
-          <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
