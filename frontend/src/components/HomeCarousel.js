@@ -1,9 +1,9 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
-import laf from "../ChasingRed.png";
-import feather from "../feather.png";
-import whiteStag from "../white-stag.png";
-import carouselBG from "../HeroBG.jpg";
-import quotation from "../QuotationMark.png";
+import laf from '../images/ChasingRed.png';
+import feather from "../images/feather.png";
+import whiteStag from "../images/white-stag.png";
+import carouselBG from "../images/HeroBG.jpg";
+import quotation from "../images/QuotationMark.png";
 export default function CarouselTransition() {
   return (
     <div

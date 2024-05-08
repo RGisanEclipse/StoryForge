@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../StoryForgeLogo.png";
+import logo from "../images/StoryForgeLogo.png";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

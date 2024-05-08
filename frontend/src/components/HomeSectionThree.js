@@ -1,7 +1,7 @@
 import React from "react";
-import originals from "../Originals.jpg";
-import sf from "../StoryForgies.png";
-import contests from "../writing-contests.jpg";
+import originals from "../images/Originals.jpg";
+import sf from "../images/StoryForgies.png";
+import contests from "../images/writing-contests.jpg";
 import RevealX from "./utils/RevealX";
 import RevealY from "./utils/RevealY";
 export default function HomeSectionThree() {

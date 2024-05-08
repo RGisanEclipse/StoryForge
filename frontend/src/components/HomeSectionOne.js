@@ -1,5 +1,5 @@
-import hero from "../Hero.png";
-import bg from "../HeroBG.jpg";
+import hero from "../images/Hero.png";
+import bg from "../images/HeroBG.jpg";
 import RevealNX from "./utils/RevealNX";
 import RevealY from "./utils/RevealY";
 import RevealX from "./utils/RevealX";

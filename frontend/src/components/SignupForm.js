@@ -1,13 +1,13 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import React, { useState } from "react";
-import logo from "../StoryForgeLogo.png";
+import logo from "../images/StoryForgeLogo.png";
 import RevealNX from "./utils/RevealNX";
 import { Link } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import openedEyeImage from "../Open-Eye.png";
-import closedEyeImage from "../Closed-Eye.png";
+import openedEyeImage from "../images/Open-Eye.png";
+import closedEyeImage from "../images/Closed-Eye.png";
 
 export default function SignupForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -185,7 +185,7 @@ export default function SignupForm() {
               </div>
               <div className="pt-5 flex flex-col gap-3 items-center">
                 <div className="text-gray-300 font-orbitron">
-                  Or Sign up with
+                  Or Sign in with
                 </div>
                 <div className="flex flex-row justify-between gap-10">
                   <div>
