@@ -132,7 +132,7 @@ export default function CarouselTransition() {
                 {" "}
                 Isabelle Ronin (@ISABELLERONIN)
               </cite>
-              <p className="pl-9 text-gray-300 text-xs ms:text-sm lg:text-base font-manrope">
+              <p className="pl-10 text-gray-300 text-xs ms:text-sm lg:text-base font-manrope">
                 Chasing Red was one of 2016's most read stories on StoryForge.
                 Newly edited and expanded, the book was split into two and hit
                 bookstore shelves in 2017.
@@ -162,7 +162,7 @@ export default function CarouselTransition() {
                 {" "}
                 Zoe Aarsen (@ZAARSENIST)
               </cite>
-              <p className="pl-9 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
+              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
                 Zoe Aarsen is a graphic designer and copyrighter. Her first
                 paranormal YA novel, Light as a Feather, Stiff as a Board, is
                 being published by Simon & Schuster and turned into a television
@@ -192,7 +192,7 @@ export default function CarouselTransition() {
                 {" "}
                 Kara Barbieri (@PANDEAN)
               </cite>
-              <p className="pl-9 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
+              <p className="pl-10 text-gray-300 text-xs md:text-sm lg:text-base font-manrope">
                 Kara barbieri is a twenty-two year old author with a love for
                 the weird and mystic. Her debut novel, WHITE STAG, will be
                 published by Wednesday Books/Macmillan in January 2019.
