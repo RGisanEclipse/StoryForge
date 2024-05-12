@@ -34,10 +34,9 @@ export default function HomeSectionOne() {
               style={{ maxWidth: "800px" }}
               className="text-lg text-white font-manrope"
             >
-              Home to 97 million people who spend over 26 billion minutes a
-              month engaged in original stories, StoryForge has democratized
-              storytelling for a new generation of diverse Gen Z writers and
-              their fans. As of July 2023
+              Unlocking Creativity: StoryForge Empowers 97 Million Gen Z Writers
+              and Fans to Dive into Original Stories, Surpassing 26 Billion
+              Minutes Monthly, as of July 2023!
             </p>
             <div className="flex flex-row gap-8 my-5">
               <button className="p-2 px-8 rounded-md bg-[#e0474d] font-medium text-white hover:bg-[#da334f]">
