@@ -1,6 +1,6 @@
-import Home from "./components/Home.js";
-import Login from "./components/Login.js";
-import Feed from "./components/Feed.js";
+import Home from "./components/Home.jsx";
+import Login from "./components/Login.jsx";
+import Feed from "./components/Feed.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (

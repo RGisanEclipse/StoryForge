@@ -1,7 +1,7 @@
 import React from "react";
-import LoginBackground from "./LoginBackground";
+import LoginBackground from "./helpers/LoginBackground";
 import { useTypewriter } from "react-simple-typewriter";
-import SignupForm from "./SignupForm";
+import SignupForm from "./helpers/SignupForm";
 import RevealY from "./utils/RevealY";
 
 export default function Login() {

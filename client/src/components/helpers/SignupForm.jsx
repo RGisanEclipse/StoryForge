@@ -1,13 +1,13 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import React, { useState } from "react";
-import logo from "../images/StoryForgeLogo.png";
-import RevealNX from "./utils/RevealNX";
+import logo from "../../images/StoryForgeLogo.png";
+import RevealNX from "../utils/RevealNX";
 import { Link } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
-import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import openedEyeImage from "../images/Open-Eye.png";
-import closedEyeImage from "../images/Closed-Eye.png";
+import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import openedEyeImage from "../../images/Open-Eye.png";
+import closedEyeImage from "../../images/Closed-Eye.png";
 
 export default function SignupForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);

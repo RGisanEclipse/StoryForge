@@ -1,9 +1,9 @@
 import React from "react";
-import originals from "../images/Originals.jpg";
-import sf from "../images/StoryForgies.png";
-import contests from "../images/writing-contests.jpg";
-import RevealX from "./utils/RevealX";
-import RevealY from "./utils/RevealY";
+import originals from "../../images/Originals.jpg";
+import sf from "../../images/StoryForgies.png";
+import contests from "../../images/writing-contests.jpg";
+import RevealX from "../utils/RevealX";
+import RevealY from "../utils/RevealY";
 export default function HomeSectionThree() {
   return (
     <div className="flex flex-col items-center md:py-10">

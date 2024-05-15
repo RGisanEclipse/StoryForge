@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../images/StoryForgeLogo.png";
+import logo from "../../images/StoryForgeLogo.png";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
   return (
     <nav className="bg-[#0b0338] p-4">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="flex mx-10 items-center justify-between">
         <div className="flex items-center">
           <div className="hidden md:block">
             <img

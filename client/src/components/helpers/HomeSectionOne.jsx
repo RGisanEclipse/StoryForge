@@ -1,12 +1,12 @@
-import hero from "../images/Hero.png";
-import bg from "../images/HeroBG.jpg";
-import RevealNX from "./utils/RevealNX";
-import RevealY from "./utils/RevealY";
-import RevealX from "./utils/RevealX";
+import hero from "../../images/Hero.png";
+import bg from "../../images/HeroBG.jpg";
+import RevealNX from "../utils/RevealNX";
+import RevealY from "../utils/RevealY";
+import RevealX from "../utils/RevealX";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
-import "../App.css";
+import "../../App.css";
 export default function HomeSectionOne() {
   return (
     <div

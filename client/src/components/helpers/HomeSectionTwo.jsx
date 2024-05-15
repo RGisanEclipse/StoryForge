@@ -1,6 +1,6 @@
-import blob from "../images/Blob.png";
-import RevealX from "./utils/RevealX";
-import RevealY from "./utils/RevealY";
+import blob from "../../images/Blob.png";
+import RevealX from "../utils/RevealX";
+import RevealY from "../utils/RevealY";
 export default function HomeSectionTwo() {
   return (
     <div className="py-8">
@@ -21,7 +21,9 @@ export default function HomeSectionTwo() {
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">1</div>
               <div className="flex flex-col gap-5">
-                <h2 className="text-2xl font-semibold font-montserrat">Create</h2>
+                <h2 className="text-2xl font-semibold font-montserrat">
+                  Create
+                </h2>
                 <p className="w-56 h-32 font-manrope">
                   Share your original story on StoryForge. Find the writing
                   resources you need to craft a story only you can tell.
@@ -43,7 +45,9 @@ export default function HomeSectionTwo() {
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">2</div>
               <div className="flex flex-col gap-5">
-                <h2 className="text-2xl font-semibold font-montserrat">Build</h2>
+                <h2 className="text-2xl font-semibold font-montserrat">
+                  Build
+                </h2>
                 <p className="w-56 h-32 font-manrope">
                   Establish a global fan base as your story gains readership and
                   momentum. Connect with other like-minded writers through
@@ -66,7 +70,9 @@ export default function HomeSectionTwo() {
             <div className="flex flex-row gap-10 w-80 lg:w-96">
               <div className="text-8xl font-extrabold">3</div>
               <div className="flex flex-col gap-5">
-                <h2 className="text-2xl font-semibold font-montserrat">Amplify</h2>
+                <h2 className="text-2xl font-semibold font-montserrat">
+                  Amplify
+                </h2>
                 <p className="w-56 h-32 font-manrope">
                   Gain StoryForge Star status and get your story published or
                   adapted into film or television with StoryForge Studios!
