@@ -7,9 +7,10 @@ import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Avatar } from "@mui/material";
+
 export default function FeedSidebar() {
   return (
-    <nav className="bg-[#0b0338] p-4 h-full">
+    <nav className="p-4 h-full">
       <div className="container mx-auto flex flex-col gap-3">
         <div className="hidden md:flex items-center justify-center xl:justify-start">
           <div className="hidden md:block">
@@ -36,68 +37,36 @@ export default function FeedSidebar() {
           </div>
         </div>
         <div className="hidden md:flex flex-col font-montserrat gap-10 mt-7">
-          <div className="flex items-center justify-center xl:justify-start">
-            <HomeRoundedIcon
-              className="text-white cursor-pointer hover:text-navHover"
-              style={{ fontSize: "35px" }}
-            />
-            <a
-              href="#"
-              className="hidden xl:block text-white text-xl mx-4 hover:text-navHover"
-            >
-              Home
-            </a>
-          </div>
-          <div className="flex items-center justify-center xl:justify-start">
-            <SearchIcon
-              className="text-white cursor-pointer hover:text-navHover"
-              style={{ fontSize: "35px" }}
-            />
-            <a
-              href="#"
-              className="hidden xl:block text-white text-xl mx-4 hover:text-navHover"
-            >
-              Explore
-            </a>
-          </div>
-          <div className="flex items-center justify-center xl:justify-start">
-            <BookmarksIcon
-              className="text-white cursor-pointer hover:text-navHover"
-              style={{ fontSize: "35px" }}
-            />
-            <a
-              href="#"
-              className="hidden xl:block text-white text-xl mx-4 hover:text-navHover"
-            >
-              Saved
-            </a>
-          </div>
-          <div className="flex items-center justify-center xl:justify-start">
-            <CreateIcon
-              className="text-white cursor-pointer hover:text-navHover"
-              style={{ fontSize: "35px" }}
-            />
-            <a
-              href="#"
-              className="hidden xl:block text-white text-xl mx-4 hover:text-navHover"
-            >
-              Create Post
-            </a>
-          </div>
-          <div className="flex items-center justify-center xl:justify-start">
-            <LogoutIcon
-              className="text-white cursor-pointer hover:text-navHover"
-              style={{ fontSize: "35px" }}
-            />
-            <a
-              href="#"
-              className="hidden xl:block text-white text-xl mx-4 hover:text-navHover"
-            >
-              Log Out
-            </a>
-          </div>
+          <SidebarItem
+            icon={<HomeRoundedIcon style={{ fontSize: "35px" }} />}
+            text="Home"
+          />
+          <SidebarItem
+            icon={<SearchIcon style={{ fontSize: "35px" }} />}
+            text="Explore"
+          />
+          <SidebarItem
+            icon={<BookmarksIcon style={{ fontSize: "35px" }} />}
+            text="Saved"
+          />
+          <SidebarItem
+            icon={<CreateIcon style={{ fontSize: "35px" }} />}
+            text="Create Post"
+          />
+          <SidebarItem
+            icon={<LogoutIcon style={{ fontSize: "35px" }} />}
+            text="Log Out"
+          />
         </div>
       </div>
     </nav>
+  );
+}
+function SidebarItem({ icon, text }) {
+  return (
+    <div className="flex items-center justify-center xl:justify-start text-white hover:text-navHover cursor-pointer">
+      {icon}
+      <span className="text-xl mx-4 hidden xl:block">{text}</span>
+    </div>
   );
 }
