@@ -9,8 +9,8 @@ import logo from "../images/StoryForgeLogo.png";
 import { Avatar } from "@mui/material";
 export default function Feed() {
   return (
-    <div className="w-screen h-screen flex flex-row bg-black">
-      <div className="fixed top-0 left-0 flex items-center justify-center md:hidden w-full h-14 p-2 px-4 gap-3 border-b">
+    <div className="w-screen h-screen flex flex-row bg-[#0b0338]">
+      <div className="fixed top-0 left-0 flex items-center justify-center md:hidden w-full h-14 p-2 px-4 gap-3">
         <img
           src={logo}
           alt="Story Forge Logo"
@@ -23,10 +23,10 @@ export default function Feed() {
       <div className="hidden md:block w-24 max-w-sm xl:w-1/5 h-full">
         <FeedSidebar />
       </div>
-      <div className="h-full w-full md:w-3/5 py-14 md:py-0 md:border-l md:border-white md:border-r">
+      <div className="h-full w-full md:w-3/5 py-14 md:py-0">
         <Outlet />
       </div>
-      <div className="fixed bottom-0 left-0 flex justify-between md:hidden w-full h-14 p-2 px-4 items-center border-t">
+      <div className="fixed bottom-0 left-0 flex justify-between md:hidden w-full h-14 p-2 px-4 items-center">
         <HomeRoundedIcon
           className="text-white cursor-pointer hover:text-navHover"
           style={{ fontSize: "35px" }}
@@ -40,7 +40,12 @@ export default function Feed() {
           style={{ fontSize: "35px" }}
         />
         <div className="h-8 w-8">
-          <Avatar style={{ height: "100%", width: "100%" }} />
+          <Avatar
+            style={{ height: "100%", width: "100%" }}
+            src={
+              "https://pbs.twimg.com/profile_images/1676116130275143680/BkUKyvp7_400x400.jpg"
+            }
+          />
         </div>
         <LogoutIcon
           className="text-white cursor-pointer hover:text-navHover"
