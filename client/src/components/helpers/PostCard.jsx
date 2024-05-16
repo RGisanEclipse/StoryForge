@@ -8,14 +8,12 @@ import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import { Avatar } from "@mui/material";
-import ShareIcon from "@mui/icons-material/Share";
 import Grow from "@mui/material/Grow";
 export default function PostCard(props) {
   const [open, setOpen] = React.useState(false);
@@ -23,7 +21,6 @@ export default function PostCard(props) {
   const [isLiked, setIsLiked] = React.useState(false);
   const [isSaved, setIsSaved] = React.useState(false);
   const [likeCount, setLikeCount] = React.useState(0);
-  const [saveCount, setSaveCount] = React.useState(0);
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -45,11 +42,6 @@ export default function PostCard(props) {
 
   const handleSaveClick = () => {
     setIsSaved(!isSaved);
-    if (!isSaved) {
-      setSaveCount(saveCount + 1);
-    } else {
-      setSaveCount(saveCount - 1);
-    }
   };
 
   const descriptionElementRef = React.useRef(null);
@@ -144,20 +136,21 @@ export default function PostCard(props) {
                   <BookmarkBorderIcon />
                 </Button>
               )}
-              <Typography variant="body2" className="text-white">
-                {saveCount}
-              </Typography>
-              <Button>
-                <ShareIcon />
-              </Button>
             </React.Fragment>
           </div>
-          <Button
+          <div>
+            <Button
+              sx={{ color: "white", textTransform: "initial"}}
+              onClick={handleClickOpen("paper")}
+            >
+              More
+            </Button>
+            <Button
             sx={{ color: "white", textTransform: "initial" }}
-            onClick={handleClickOpen("paper")}
           >
-            Read More
+            View
           </Button>
+          </div>
         </CardActions>
       </div>
       <Dialog
@@ -181,17 +174,13 @@ export default function PostCard(props) {
         }}
       >
         <DialogTitle id="scroll-dialog-title">{props.title}</DialogTitle>
-        <DialogContent dividers={scroll === "paper"}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-            sx={{
-              color: "white",
-            }}
-          >
-            {props.description}
-          </DialogContentText>
+        <DialogContent
+          dividers={scroll === "paper"}
+          style={{
+            scrollbarWidth: "none",
+          }}
+        >
+          <div>{props.description}</div>
         </DialogContent>
         <DialogActions>
           <Button

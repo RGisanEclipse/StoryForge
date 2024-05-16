@@ -1,6 +1,7 @@
 import Home from "./components/Home.jsx";
 import Login from "./components/Login.jsx";
 import Feed from "./components/Feed.jsx";
+import Post from "./components/Post.jsx";
 import FeedHome from "./components/helpers/FeedHome.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route element={<Feed/>}>
             <Route exact path="/feed" element={<FeedHome/>}/>
+            <Route exact path="/post" element={<Post/>}/>
           </Route>
         </Routes>
       </div>

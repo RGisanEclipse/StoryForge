@@ -46,6 +46,7 @@ export default function FeedSidebar() {
             <SidebarItem
               icon={<HomeRoundedIcon style={{ fontSize: "35px" }} />}
               text="Home"
+              to="/feed"
             />
             <SidebarItem
               icon={<SearchIcon style={{ fontSize: "35px" }} />}
@@ -69,11 +70,13 @@ export default function FeedSidebar() {
     </nav>
   );
 }
-function SidebarItem({ icon, text }) {
+function SidebarItem({ icon, text, to }) {
   return (
-    <div className="flex items-center justify-center xl:justify-start text-white hover:text-navHover cursor-pointer">
-      {icon}
-      <span className="text-xl mx-4 hidden xl:block">{text}</span>
-    </div>
+    <Link to={to}>
+      <div className="flex items-center justify-center xl:justify-start text-white hover:text-navHover cursor-pointer">
+        {icon}
+        <span className="text-xl mx-4 hidden xl:block">{text}</span>
+      </div>
+    </Link>
   );
 }
