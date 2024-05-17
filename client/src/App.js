@@ -3,6 +3,8 @@ import Login from "./components/Login.jsx";
 import Feed from "./components/Feed.jsx";
 import Post from "./components/Post.jsx";
 import FeedHome from "./components/helpers/FeedHome.jsx";
+import Create from "./components/helpers/Create.jsx";
+import "react-image-crop/dist/ReactCrop.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route element={<Feed/>}>
             <Route exact path="/feed" element={<FeedHome/>}/>
             <Route exact path="/post" element={<Post/>}/>
+            <Route exact path="/create" element={<Create/>}/>
           </Route>
         </Routes>
       </div>
