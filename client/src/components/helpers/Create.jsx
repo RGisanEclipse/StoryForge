@@ -2,7 +2,7 @@ import React from "react";
 export default function Create() {
   return (
     <div className="h-full w-full p-5 flex flex-col items-center">
-      <h1 className="text-2xl text-white">Create Story</h1>
+      <h1 className="text-3xl text-white">Create Story</h1>
       <div className="sm:col-span-4">
         <label
           htmlFor="username"
