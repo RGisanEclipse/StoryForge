@@ -9,7 +9,7 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-export default function Post() {
+export default function Post(props) {
   const [isLiked, setIsLiked] = React.useState(false);
   const [isSaved, setIsSaved] = React.useState(false);
   const [likeCount, setLikeCount] = React.useState(0);
@@ -67,9 +67,11 @@ export default function Post() {
         >
           <div className="flex items-center justify-center">
             <React.Fragment>
-              <Button sx={{ color: "white" }}>
-                <EditIcon />
-              </Button>
+            {props.hasEditPermission && (
+                <Button sx={{ color: "white" }}>
+                  <EditIcon />
+                </Button>
+              )}
               {isLiked ? (
                 <Button sx={{ color: "red" }} onClick={handleLikeClick}>
                   <FavoriteIcon />
@@ -94,9 +96,11 @@ export default function Post() {
               <Typography variant="body2" className="text-white">
                 {saveCount}
               </Typography>
-              <Button sx={{ color: "white" }}>
-                <DeleteIcon />
-              </Button>
+              {props.hasDeletePermission && (
+                <Button sx={{ color: "white" }}>
+                  <DeleteIcon />
+                </Button>
+              )}
             </React.Fragment>
           </div>
         </CardActions>
