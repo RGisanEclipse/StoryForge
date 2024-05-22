@@ -13,8 +13,6 @@ export default function Post(props) {
   const [isLiked, setIsLiked] = React.useState(false);
   const [isSaved, setIsSaved] = React.useState(false);
   const [likeCount, setLikeCount] = React.useState(0);
-  const [saveCount, setSaveCount] = React.useState(0);
-
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
     if (!isLiked) {
@@ -26,11 +24,6 @@ export default function Post(props) {
 
   const handleSaveClick = () => {
     setIsSaved(!isSaved);
-    if (!isSaved) {
-      setSaveCount(saveCount + 1);
-    } else {
-      setSaveCount(saveCount - 1);
-    }
   };
 
   return (
@@ -41,7 +34,7 @@ export default function Post(props) {
           "https://cdn.cdnparenting.com/articles/2022/04/30170320/Monkey-and-the-crocodile-story.webp"
         }
       />
-      <div className="flex justify-between items-center">
+      <div className="flex md:justify-between md:items-center flex-col md:flex-row">
         <div className="flex items-center gap-2 my-3">
           <Avatar
             src={
@@ -67,11 +60,6 @@ export default function Post(props) {
         >
           <div className="flex items-center justify-center">
             <React.Fragment>
-            {props.hasEditPermission && (
-                <Button sx={{ color: "white" }}>
-                  <EditIcon />
-                </Button>
-              )}
               {isLiked ? (
                 <Button sx={{ color: "red" }} onClick={handleLikeClick}>
                   <FavoriteIcon />
@@ -93,9 +81,11 @@ export default function Post(props) {
                   <BookmarkBorderIcon />
                 </Button>
               )}
-              <Typography variant="body2" className="text-white">
-                {saveCount}
-              </Typography>
+              {props.hasEditPermission && (
+                <Button sx={{ color: "white" }}>
+                  <EditIcon />
+                </Button>
+              )}
               {props.hasDeletePermission && (
                 <Button sx={{ color: "white" }}>
                   <DeleteIcon />
@@ -109,7 +99,7 @@ export default function Post(props) {
         gutterBottom
         variant="h5"
         component="div"
-        className="text-white"
+        className="text-white text-center md:text-left"
       >
         The Story of Crocodile and Monkey
       </Typography>
