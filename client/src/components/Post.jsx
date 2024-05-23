@@ -25,7 +25,6 @@ export default function Post(props) {
   const handleSaveClick = () => {
     setIsSaved(!isSaved);
   };
-
   return (
     <div className="h-full w-full py-6 px-5 overflow-y-auto">
       <img
@@ -34,7 +33,7 @@ export default function Post(props) {
           "https://cdn.cdnparenting.com/articles/2022/04/30170320/Monkey-and-the-crocodile-story.webp"
         }
       />
-      <div className="flex md:justify-between md:items-center flex-col md:flex-row">
+      <div className="flex justify-between md:items-center">
         <div className="flex items-center gap-2 my-3">
           <Avatar
             src={
@@ -58,38 +57,42 @@ export default function Post(props) {
             alignItems: "center",
           }}
         >
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center gap-2">
             <React.Fragment>
               {isLiked ? (
-                <Button sx={{ color: "red" }} onClick={handleLikeClick}>
-                  <FavoriteIcon />
-                </Button>
+                <FavoriteIcon
+                  sx={{ color: "red" }}
+                  onClick={handleLikeClick}
+                  className="cursor-pointer"
+                />
               ) : (
-                <Button sx={{ color: "red" }} onClick={handleLikeClick}>
-                  <FavoriteBorderIcon />
-                </Button>
+                <FavoriteBorderIcon
+                  sx={{ color: "red" }}
+                  onClick={handleLikeClick}
+                  className="cursor-pointer"
+                />
               )}
               <Typography variant="body2" className="text-white">
                 {likeCount}
               </Typography>
               {isSaved ? (
-                <Button onClick={handleSaveClick}>
-                  <BookmarkIcon />
-                </Button>
+                <BookmarkIcon
+                  sx={{ color: "blue" }}
+                  onClick={handleSaveClick}
+                  className="cursor-pointer"
+                />
               ) : (
-                <Button onClick={handleSaveClick}>
-                  <BookmarkBorderIcon />
-                </Button>
+                <BookmarkBorderIcon
+                  sx={{ color: "blue" }}
+                  onClick={handleSaveClick}
+                  className="cursor-pointer"
+                />
               )}
               {props.hasEditPermission && (
-                <Button sx={{ color: "white" }}>
-                  <EditIcon />
-                </Button>
+                <EditIcon sx={{ color: "white" }} fontSize="md" />
               )}
               {props.hasDeletePermission && (
-                <Button sx={{ color: "white" }}>
-                  <DeleteIcon />
-                </Button>
+                <DeleteIcon sx={{ color: "white" }} fontSize="md" />
               )}
             </React.Fragment>
           </div>
