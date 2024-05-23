@@ -6,6 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PersonIcon from '@mui/icons-material/Person';
 import { Avatar } from "@mui/material";
 import RevealNX from "../utils/RevealNX";
 export default function FeedSidebar() {
@@ -49,6 +50,10 @@ export default function FeedSidebar() {
               to="/feed"
             />
             <SidebarItem
+              icon={<PersonIcon style={{ fontSize: "35px" }} />}
+              text="Profile"
+            />
+            <SidebarItem
               icon={<SearchIcon style={{ fontSize: "35px" }} />}
               text="Explore"
             />
@@ -59,6 +64,7 @@ export default function FeedSidebar() {
             <SidebarItem
               icon={<CreateIcon style={{ fontSize: "35px" }} />}
               text="Create Story"
+              to="/create"
             />
             <SidebarItem
               icon={<LogoutIcon style={{ fontSize: "35px" }} />}

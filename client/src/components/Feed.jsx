@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
 import logo from "../images/StoryForgeLogo.png";
-import { Avatar } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 export default function Feed() {
   return (
     <div className="w-screen h-screen flex flex-row bg-[#0b0338]">
@@ -43,14 +43,10 @@ export default function Feed() {
           className="text-white cursor-pointer hover:text-navHover"
           style={{ fontSize: "35px" }}
         />
-        <div className="h-8 w-8">
-          <Avatar
-            style={{ height: "100%", width: "100%" }}
-            src={
-              "https://pbs.twimg.com/profile_images/1676116130275143680/BkUKyvp7_400x400.jpg"
-            }
-          />
-        </div>
+        <PersonIcon
+          className="text-white cursor-pointer hover:text-navHover"
+          style={{ fontSize: "35px" }}
+        />
         <LogoutIcon
           className="text-white cursor-pointer hover:text-navHover"
           style={{ fontSize: "35px" }}
