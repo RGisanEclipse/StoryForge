@@ -11,7 +11,7 @@ import { Avatar } from "@mui/material";
 import RevealNX from "../utils/RevealNX";
 export default function FeedSidebar() {
   return (
-    <nav className="p-4 h-full">
+    <nav className="p-4 h-full" style={{borderRight:"0.5px solid #3b3b3b"}}>
       <div className="container mx-auto flex flex-col gap-3">
         <div className="hidden md:flex items-center justify-center xl:justify-start">
           <div className="hidden md:block">
@@ -79,7 +79,7 @@ export default function FeedSidebar() {
 function SidebarItem({ icon, text, to }) {
   return (
     <Link to={to}>
-      <div className="flex items-center justify-center xl:justify-start text-white hover:text-navHover cursor-pointer">
+      <div className="flex items-center justify-center xl:justify-start text-white hover:text-fuschia cursor-pointer">
         {icon}
         <span className="text-xl mx-4 hidden xl:block">{text}</span>
       </div>

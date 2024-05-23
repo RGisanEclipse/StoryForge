@@ -4,11 +4,11 @@ import RevealY from "../utils/RevealY";
 export default function FeedHome() {
   return (
     <div
-      className="h-full w-full overflow-y-auto md:py-3"
+      className="h-full w-full overflow-y-auto md:py-3 border-white"
       style={{ scrollbarWidth: "none" }}
     >
       <div className="max-w-md mx-auto px-4">
-        <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden bg-opacity-10">
+        <div className="relative flex items-center w-full h-12 rounded-lg bg-white overflow-hidden bg-opacity-10">
           <div className="grid place-items-center h-full w-12 text-gray-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +27,11 @@ export default function FeedHome() {
           </div>
 
           <input
-            className="peer h-full w-full outline-none text-sm text-white pr-2 bg-transparent"
+            className="peer h-full w-full text-sm text-white pr-2 bg-transparent outline-none"
             type="text"
             id="search"
             placeholder="Search"
+            style={{ border: "none", outline: "none" }}
           />
         </div>
       </div>

@@ -57,30 +57,21 @@ export default function PostCard(props) {
 
   return (
     <Card
-      className="p-2 mx-5 pt-4"
+      className="pt-4 px-4 md:px-0"
       sx={{
-        backgroundColor: "#0b0338",
+        backgroundColor: "#0e0816",
+        borderRadius: "0px",
       }}
     >
       <CardMedia
         component="img"
         src={props.banner}
-        className="h-60 w-60"
+        className="h-60 w-60 rounded-lg md:rounded-none"
         sx={{
-          borderTopLeftRadius: "10px",
-          borderTopRightRadius: "10px",
           objectFit: "cover",
         }}
       />
-      <div
-        style={{
-          borderBottomLeftRadius: "30px",
-          borderBottomRightRadius: "30px",
-          borderBottom: "2px solid white",
-          borderLeft: "0.5px solid white",
-          borderRight: "0.5px solid white",
-        }}
-      >
+      <div>
         <CardContent>
           <Typography
             gutterBottom
@@ -140,16 +131,14 @@ export default function PostCard(props) {
           </div>
           <div>
             <Button
-              sx={{ color: "white", textTransform: "initial"}}
+              sx={{ color: "white", textTransform: "initial" }}
               onClick={handleClickOpen("paper")}
             >
               More
             </Button>
-            <Button
-            sx={{ color: "white", textTransform: "initial" }}
-          >
-            View
-          </Button>
+            <Button sx={{ color: "white", textTransform: "initial" }}>
+              View
+            </Button>
           </div>
         </CardActions>
       </div>
@@ -165,10 +154,8 @@ export default function PostCard(props) {
           backdropFilter: "blur(2px)",
           "& .MuiDialog-paper": {
             maxHeight: "80%",
-            backgroundColor: "#0b0338",
+            backgroundColor: "#0e0816",
             color: "white",
-            borderTop: "1px solid white",
-            borderBottom: "1px solid white",
             borderRadius: "10px",
           },
         }}

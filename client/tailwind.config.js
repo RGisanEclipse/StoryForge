@@ -9,6 +9,11 @@ module.exports = withMT({
       colors: {
         navHover: '#e0474d',
         discoverHover: '#53bfdc',
+        void: '#0e0816',
+        fuschia: '#a239ca',
+        jewel: '#4717f6',
+        stark: '#e7dfdd',
+        borderGray: '#3b3b3b'
       },
       fontFamily:{
         "orbitron":["orbitron","sans-serif"],

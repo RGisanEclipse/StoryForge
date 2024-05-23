@@ -39,7 +39,7 @@ function StoryEditor() {
       style={{ scrollbarWidth: "none" }}
     >
       <h1 className="text-sm font-medium text-white">Content</h1>
-      <div className="mt-2 flex justify-between">
+      <div className="mt-2 flex justify-between items-center">
         <div>
           <FormatBoldIcon
             onClick={handleBoldClick}
@@ -62,7 +62,7 @@ function StoryEditor() {
             className="cursor-pointer ml-2"
           />
         </div>
-        <Button sx={{ color: "white" }}>SAVE</Button>
+        <Button sx={{ color: "white", textTransform: "initial" }}>Save & Post</Button>
       </div>
       <div
         className=" mt-2 border h-5/6 p-2 rounded-lg overflow-y-auto"
