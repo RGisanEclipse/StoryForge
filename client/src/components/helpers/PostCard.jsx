@@ -104,28 +104,23 @@ export default function PostCard(props) {
             alignItems: "center",
           }}
         >
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center gap-3">
             <React.Fragment>
               {isLiked ? (
-                <Button sx={{ color: "red" }} onClick={handleLikeClick}>
-                  <FavoriteIcon />
-                </Button>
+                <FavoriteIcon sx={{ color: "red", cursor: "pointer" }} onClick={handleLikeClick} />
               ) : (
-                <Button sx={{ color: "red" }} onClick={handleLikeClick}>
-                  <FavoriteBorderIcon />
-                </Button>
+                <FavoriteBorderIcon
+                  sx={{ color: "red", cursor: "pointer"}}
+                  onClick={handleLikeClick}
+                />
               )}
               <Typography variant="body2" className="text-white">
                 {likeCount}
               </Typography>
               {isSaved ? (
-                <Button onClick={handleSaveClick}>
-                  <BookmarkIcon />
-                </Button>
+                <BookmarkIcon sx={{ color: "blue", cursor: "pointer" }}onClick={handleSaveClick} />
               ) : (
-                <Button onClick={handleSaveClick}>
-                  <BookmarkBorderIcon />
-                </Button>
+                <BookmarkBorderIcon sx={{ color: "blue", cursor: "pointer" }}onClick={handleSaveClick} />
               )}
             </React.Fragment>
           </div>

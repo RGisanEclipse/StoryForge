@@ -15,8 +15,8 @@ export default function Create() {
   };
 
   return (
-    <div style={{scrollbarWidth: "none"}} className="h-full w-full p-5 flex flex-col overflow-y-auto">
-      <h1 className="text-2xl text-white text-center">Create Story</h1>
+    <div style={{scrollbarWidth: "none"}} className="h-full w-full px-5 md:p-5 flex flex-col overflow-y-auto">
+      <h1 className="text-2xl text-white text-center font-manrope">Create Story</h1>
       <div className="flex gap-5 flex-wrap">
         <div className="sm:col-span-4 w-full">
           <label

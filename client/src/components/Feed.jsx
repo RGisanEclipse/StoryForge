@@ -33,26 +33,26 @@ export default function Feed() {
       <div className="fixed bottom-0 left-0 flex justify-between md:hidden w-full h-14 p-2 px-4 items-center">
         <Link to="/feed">
           <HomeRoundedIcon
-            className="text-white cursor-pointer hover:text-navHover"
+            className="text-white cursor-pointer hover:text-fuschia"
             style={{ fontSize: "35px" }}
           />
         </Link>
         <SearchIcon
-          className="text-white cursor-pointer hover:text-navHover"
+          className="text-white cursor-pointer hover:text-fuschia"
           style={{ fontSize: "35px" }}
         />
         <Link to="/create">
           <CreateIcon
-            className="text-white cursor-pointer hover:text-navHover"
+            className="text-white cursor-pointer hover:text-fuschia"
             style={{ fontSize: "35px" }}
           />
         </Link>
         <PersonIcon
-          className="text-white cursor-pointer hover:text-navHover"
+          className="text-white cursor-pointer hover:text-fuschia"
           style={{ fontSize: "35px" }}
         />
         <LogoutIcon
-          className="text-white cursor-pointer hover:text-navHover"
+          className="text-white cursor-pointer hover:text-fuschia"
           style={{ fontSize: "35px" }}
         />
       </div>
