@@ -1,6 +1,6 @@
 import React from "react";
 import RevealY from "../utils/RevealY";
-
+import DisplayPost from "./DisplayPost";
 export default function Explore() {
   const images = [
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
@@ -30,11 +30,7 @@ export default function Explore() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
           {images.map((src, index) => (
             <div key={index}>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={src}
-                alt={`Gallery Image ${index + 1}`}
-              />
+              <DisplayPost image={src} />
             </div>
           ))}
         </div>

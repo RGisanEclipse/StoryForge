@@ -5,6 +5,7 @@ import { Button, Dialog } from "@material-tailwind/react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import openedEyeImage from "../../images/Open-Eye.png";
 import closedEyeImage from "../../images/Closed-Eye.png";
+import DisplayPost from "./DisplayPost";
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -154,7 +155,7 @@ export default function Profile() {
                 style={{
                   border: "none",
                   borderBottom: "0.5px solid lightgray",
-                  outline: "none !important"
+                  outline: "none !important",
                 }}
                 className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
               />
@@ -221,11 +222,7 @@ export default function Profile() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
           {images.map((src, index) => (
             <div key={index}>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={src}
-                alt={`Gallery Image ${index + 1}`}
-              />
+              <DisplayPost image={src} />
             </div>
           ))}
         </div>
