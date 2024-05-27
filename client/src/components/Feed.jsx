@@ -37,20 +37,24 @@ export default function Feed() {
             style={{ fontSize: "35px" }}
           />
         </Link>
-        <SearchIcon
-          className="text-white cursor-pointer hover:text-fuschia"
-          style={{ fontSize: "35px" }}
-        />
+        <Link to="/explore">
+          <SearchIcon
+            className="text-white cursor-pointer hover:text-fuschia"
+            style={{ fontSize: "35px" }}
+          />
+        </Link>
         <Link to="/create">
           <CreateIcon
             className="text-white cursor-pointer hover:text-fuschia"
             style={{ fontSize: "35px" }}
           />
         </Link>
-        <PersonIcon
-          className="text-white cursor-pointer hover:text-fuschia"
-          style={{ fontSize: "35px" }}
-        />
+        <Link to="/profile">
+          <PersonIcon
+            className="text-white cursor-pointer hover:text-fuschia"
+            style={{ fontSize: "35px" }}
+          />
+        </Link>
         <LogoutIcon
           className="text-white cursor-pointer hover:text-fuschia"
           style={{ fontSize: "35px" }}

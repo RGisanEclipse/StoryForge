@@ -7,6 +7,8 @@ import Create from "./components/helpers/Create.jsx";
 import "react-image-crop/dist/ReactCrop.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./components/helpers/Profile.jsx";
+import Explore from "./components/helpers/Explore.jsx";
+import Saved from "./components/helpers/Saved.jsx";
 function App() {
   return (
     <Router>
@@ -19,6 +21,8 @@ function App() {
             <Route exact path="/post" element={<Post/>}/>
             <Route exact path="/create" element={<Create/>}/>
             <Route exact path="/profile" element={<Profile/>}/>
+            <Route exact path="/explore" element={<Explore/>}/>
+            <Route exact path="/saved" element={<Saved/>}/>
           </Route>
         </Routes>
       </div>

@@ -52,14 +52,17 @@ export default function FeedSidebar() {
             <SidebarItem
               icon={<PersonIcon style={{ fontSize: "35px" }} />}
               text="Profile"
+              to="/profile"
             />
             <SidebarItem
               icon={<SearchIcon style={{ fontSize: "35px" }} />}
               text="Explore"
+              to="/explore"
             />
             <SidebarItem
               icon={<BookmarksIcon style={{ fontSize: "35px" }} />}
               text="Saved"
+              to="/saved"
             />
             <SidebarItem
               icon={<CreateIcon style={{ fontSize: "35px" }} />}
