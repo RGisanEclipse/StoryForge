@@ -8,12 +8,21 @@ import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import openedEyeImage from "../../images/Open-Eye.png";
 import closedEyeImage from "../../images/Closed-Eye.png";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 export default function SignupForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [reEnterPasswordVisible, setReEnterPasswordVisible] = useState(false);
   const [loginPasswordVisible, setLoginPasswordVisible] = useState(false);
-
+  const [signupData, setSignUpData] = useState({
+    firstName: "",
+    lastName: "",
+    userName: "",
+    email: "",
+    password: "",
+    repassword: "",
+  });
+  const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevState) => !prevState);
   };
@@ -24,6 +33,33 @@ export default function SignupForm() {
 
   const toggleLoginPasswordVisibility = () => {
     setLoginPasswordVisible((prevState) => !prevState);
+  };
+
+  const handleSignup = async (userData) => {
+    if (userData.password === userData.repassword) {
+      try {
+        const response = await axios.post(
+          "http://localhost:8080/signup",
+          userData
+        );
+        if (response.status === 200 && response.data.success) {
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("userID", response.data.userId.id);
+          navigate("/feed");
+        }
+      } catch (error) {
+        console.error("Error signing up: ", error.message);
+        if (error.message === "Request failed with status code 401") {
+          alert("Username already exists");
+        } else if (error.message === "Request failed with status code 402") {
+          alert("Email already exists");
+        } else {
+          alert("An error occurred while signing up. Please try again later.");
+        }
+      }
+    } else {
+      alert("Passwords do not match");
+    }
   };
 
   return (
@@ -102,7 +138,12 @@ export default function SignupForm() {
     >
       <div className="flex justify-center mt-2 md:mt-10 lg:mt-20 ">
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault(); // Prevent default form submission behavior
+              handleSignup(signupData); // Call your signup function
+            }}
+          >
             <RevealNX>
               <div className="mb-4 flex md:justify-center">
                 <Link to="/" className="text-white text-xl font-bold">
@@ -125,6 +166,9 @@ export default function SignupForm() {
                   borderBottom: "0.5px solid lightgray",
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                onChange={(e) => {
+                  setSignUpData({ ...signupData, email: e.target.value });
+                }}
               />
             </div>
             <div className="mb-4">
@@ -138,6 +182,9 @@ export default function SignupForm() {
                   borderBottom: "0.5px solid lightgray",
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                onChange={(e) => {
+                  setSignUpData({ ...signupData, userName: e.target.value });
+                }}
               />
             </div>
             <div className="mb-4 relative">
@@ -151,6 +198,9 @@ export default function SignupForm() {
                   borderBottom: "0.5px solid lightgray",
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                onChange={(e) => {
+                  setSignUpData({ ...signupData, password: e.target.value });
+                }}
               />
               <button
                 type="button"
@@ -175,6 +225,9 @@ export default function SignupForm() {
                   borderBottom: "0.5px solid lightgray",
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                onChange={(e) => {
+                  setSignUpData({ ...signupData, repassword: e.target.value });
+                }}
               />
               <button
                 type="button"
