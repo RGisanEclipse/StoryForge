@@ -30,7 +30,7 @@ export default function Feed() {
       <div className="hidden xl:block w-24 max-w-sm xl:w-1/5 h-screen pt-4">
         <FeedRightSideBar />
       </div>
-      <div className="fixed bottom-0 left-0 flex justify-between md:hidden w-full h-14 p-2 px-4 items-center">
+      <div className="fixed bottom-0 left-0 flex justify-between md:hidden w-full h-14 p-2 px-4 items-center bg-void">
         <Link to="/feed">
           <HomeRoundedIcon
             className="text-white cursor-pointer hover:text-fuschia"

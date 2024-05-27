@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useRef } from "react";
 import { Avatar } from "@mui/material";
 import RevealY from "../utils/RevealY";
-import {
-  Button,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-} from "@material-tailwind/react";
-
+import { Button, Dialog } from "@material-tailwind/react";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import openedEyeImage from "../../images/Open-Eye.png";
+import closedEyeImage from "../../images/Closed-Eye.png";
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -25,12 +21,20 @@ const images = [
 ];
 
 export default function Profile() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [reEnterPasswordVisible, setReEnterPasswordVisible] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isCurrentUser, setIsCurrentUser] = useState(false);
+  const [isCurrentUser, setIsCurrentUser] = useState(true);
   const [isFollowing, setIsFollowing] = useState(true);
-
+  const bannerInput = useRef();
+  const bannerImage = useRef(null);
   const handleOpen = () => setOpen(!open);
-
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevState) => !prevState);
+  };
+  const toggleReEnterPasswordVisibility = () => {
+    setReEnterPasswordVisible((prevState) => !prevState);
+  };
   const handleFollow = async () => {
     setIsFollowing(true);
   };
@@ -39,6 +43,18 @@ export default function Profile() {
     setIsFollowing(false);
   };
 
+  const handleBannerImageChange = () => {
+    console.log("In handleBannerImageChange");
+    const file = bannerInput.current.files[0];
+    if (file) {
+      console.log("File added");
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        bannerImage.current.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div
       className="text-white h-full w-full p-5 overflow-y-auto"
@@ -89,8 +105,12 @@ export default function Profile() {
             </Button>
           )
         ) : (
-          <Button onClick={handleOpen} variant="gradient" className="mt-3">
-            Open Dialog
+          <Button
+            onClick={handleOpen}
+            className="rounded-full mt-3"
+            color="blue-gray"
+          >
+            Edit Profile
           </Button>
         )}
         <Dialog
@@ -100,27 +120,101 @@ export default function Profile() {
             mount: { scale: 1, y: 0 },
             unmount: { scale: 0.9, y: -100 },
           }}
+          className="bg-[#0e0816] text-white max-h-[80%] rounded-lg"
         >
-          <DialogHeader>It's a simple dialog.</DialogHeader>
-          <DialogBody>
-            The key to more success is to have a lot of pillows. Put it this
-            way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I&apos;m never giving up,
-            I&apos;m just getting started. I&apos;m up to something. Fan luv.
-          </DialogBody>
-          <DialogFooter>
-            <Button
-              variant="text"
-              color="red"
-              onClick={handleOpen}
-              className="mr-1"
-            >
-              <span>Cancel</span>
-            </Button>
-            <Button variant="gradient" color="green" onClick={handleOpen}>
+          <div className="flex flex-col p-2 gap-3">
+            <div className="relative flex justify-center items-center">
+              <img
+                src=""
+                className="bg-stark object-cover brightness-50"
+                style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+                ref={bannerImage}
+              />
+              <input
+                type="file"
+                className="hidden"
+                id="banner"
+                accept="image/*"
+                ref={bannerInput}
+                onChange={handleBannerImageChange}
+              />
+              <label
+                htmlFor="banner"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              >
+                <AddAPhotoIcon />
+              </label>
+            </div>
+            <div className="flex flex-col items-center">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Username"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                  outline: "none !important"
+                }}
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+              />
+              <div className="mb-4 relative">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  style={{
+                    border: "none",
+                    borderBottom: "0.5px solid lightgray",
+                  }}
+                  className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none"
+                  onClick={togglePasswordVisibility}
+                >
+                  <img
+                    src={passwordVisible ? openedEyeImage : closedEyeImage}
+                    alt={passwordVisible ? "Hide password" : "Show password"}
+                    className="h-5 w-5 text-gray-400"
+                  />
+                </button>
+              </div>
+              <div className="mb-4 relative">
+                <input
+                  type={reEnterPasswordVisible ? "text" : "password"}
+                  id="re-enter-password"
+                  name="re-enter-password"
+                  placeholder="Re-Enter Password"
+                  style={{
+                    border: "none",
+                    borderBottom: "0.5px solid lightgray",
+                  }}
+                  className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none"
+                  onClick={toggleReEnterPasswordVisibility}
+                >
+                  <img
+                    src={
+                      reEnterPasswordVisible ? openedEyeImage : closedEyeImage
+                    }
+                    alt={
+                      reEnterPasswordVisible ? "Hide password" : "Show password"
+                    }
+                    className="h-5 w-5 text-gray-400"
+                  />
+                </button>
+              </div>
+            </div>
+            <Button color="blue" onClick={handleOpen}>
               <span>Confirm</span>
             </Button>
-          </DialogFooter>
+          </div>
         </Dialog>
       </div>
       <RevealY>
