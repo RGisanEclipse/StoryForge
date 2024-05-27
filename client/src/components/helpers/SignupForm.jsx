@@ -120,6 +120,10 @@ export default function SignupForm() {
                 id="email"
                 name="email"
                 placeholder="Email"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
@@ -129,6 +133,10 @@ export default function SignupForm() {
                 id="name"
                 name="name"
                 placeholder="Username"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
@@ -138,6 +146,10 @@ export default function SignupForm() {
                 id="password"
                 name="password"
                 placeholder="Password"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
@@ -158,6 +170,10 @@ export default function SignupForm() {
                 id="re-enter-password"
                 name="re-enter-password"
                 placeholder="Re-Enter Password"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
@@ -230,6 +246,10 @@ export default function SignupForm() {
                 id="nameLogin"
                 name="nameLogin"
                 placeholder="Email or Username"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
             </div>
@@ -239,6 +259,10 @@ export default function SignupForm() {
                 id="passwordLogin"
                 name="passwordLogin"
                 placeholder="Password"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />
               <button
