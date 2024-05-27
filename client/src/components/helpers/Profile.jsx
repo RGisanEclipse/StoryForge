@@ -7,6 +7,7 @@ import openedEyeImage from "../../images/Open-Eye.png";
 import closedEyeImage from "../../images/Closed-Eye.png";
 import DisplayPost from "./DisplayPost";
 const images = [
+  "https://pbs.twimg.com/profile_banners/1455835364644384770/1635933476/1500x500",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",

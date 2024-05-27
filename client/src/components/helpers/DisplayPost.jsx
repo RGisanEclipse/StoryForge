@@ -15,7 +15,7 @@ export default function DisplayPost(props) {
       >
         <img
           alt="nature"
-          className="h-auto w-full object-cover object-center"
+          className="h-60 w-80 object-cover object-center"
           src={props.image}
         />
       </Card>
