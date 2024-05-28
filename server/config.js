@@ -130,3 +130,62 @@ export async function updateProfile(userData) {
   }
 }
 
+export async function fetchStoriesWithUserData() {
+  try {
+    const storiesCollection = collection(fireStoreObject, "stories");
+    const querySnapshot = await getDocs(storiesCollection);
+    const stories = [];
+
+    for (const docRef of querySnapshot.docs) {
+      const storyData = docRef.data();
+      const userData = await fetchUserData(storyData.userID);
+      const { userName, avatarSrc } = userData;
+      const contentWords = storyData.content.split(" ");
+      const overviewWords = contentWords.slice(0, 50);
+      let overview = overviewWords.join(" ");
+      if (contentWords.length > 50) {
+        overview += " ...";
+      }
+      const storyWithUserData = {
+        ...storyData,
+        userName,
+        avatarSrc,
+        overview,
+        content: storyData.content,
+      };
+
+      stories.push(storyWithUserData);
+    }
+
+    return stories;
+  } catch (error) {
+    console.error("Error fetching stories with user data:", error);
+    throw error;
+  }
+}
+
+export async function fetchPostDataWithUserData(postID) {
+  try {
+    const postRef = doc(collection(fireStoreObject, "posts"), postID);
+    const postSnapshot = await getDoc(postRef);
+    if (postSnapshot.exists()) {
+      const postData = postSnapshot.data();
+      const userID = postData.userID;
+      const userRef = doc(collection(fireStoreObject, "users"), userID);
+      const userSnapshot = await getDoc(userRef);
+      if (userSnapshot.exists()) {
+        const userData = userSnapshot.data();
+        const { userName, avatarSrc } = userData;
+        return { ...postData, userName, avatarSrc };
+      } else {
+        throw new Error("User data not found");
+      }
+    } else {
+      throw new Error("Post data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching post data with user data:", error);
+    throw error;
+  }
+}
+

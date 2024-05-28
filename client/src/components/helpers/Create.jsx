@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { FileInput, Label } from "flowbite-react";
 import StoryEditor from "./StoryEditor";
 import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export default function Create() {
   const userData = useOutletContext();
@@ -10,7 +11,7 @@ export default function Create() {
   const [storyContent, setStoryContent] = useState("");
   const [fileSelected, setFileSelected] = useState(false);
   const fileInputRef = useRef();
-
+  const navigate = useNavigate();
   const handleFileInputChange = (event) => {
     handleFileChange(event);
     setFileSelected(!!fileInputRef.current.files[0]);
@@ -41,7 +42,10 @@ export default function Create() {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        if(response.status===200){
+          alert("The Story was Uploaded");
+          navigate("/feed");
+        }
       })
       .catch((error) => {
         console.error("Error uploading file:", error);

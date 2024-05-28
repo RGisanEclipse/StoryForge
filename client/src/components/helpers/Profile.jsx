@@ -83,7 +83,9 @@ export default function Profile(props) {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        if(response.status===200){
+          alert("Profile updated successfully");
+        }
       })
       .catch((error) => {
         console.error("Error uploading file:", error);
@@ -165,7 +167,7 @@ export default function Profile(props) {
           <div className="flex flex-col p-2 gap-3">
             <div className="relative flex justify-center items-center">
               <img
-                src=""
+                src={userData.avatarSrc}
                 className="bg-stark object-cover brightness-50"
                 style={{ width: "100px", height: "100px", borderRadius: "50%" }}
                 ref={bannerImage}

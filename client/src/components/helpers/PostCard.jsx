@@ -65,7 +65,7 @@ export default function PostCard(props) {
     >
       <CardMedia
         component="img"
-        src={props.banner}
+        src={props.fileName}
         className="h-60 w-60 rounded-lg md:rounded-none"
         sx={{
           objectFit: "cover",
@@ -82,7 +82,7 @@ export default function PostCard(props) {
             {props.title}
           </Typography>
           <div className="flex items-center gap-2 my-3">
-            <Avatar src={props.authorProfile} />
+            <Avatar src={props.avatarSrc} />
             <span
               variant="body2"
               className="text-gray-400"
@@ -90,7 +90,7 @@ export default function PostCard(props) {
                 mb: 2,
               }}
             >
-              {props.author}
+              {props.userName}
             </span>
           </div>
           <Typography variant="body2" className="text-white">
@@ -107,10 +107,13 @@ export default function PostCard(props) {
           <div className="flex items-center justify-center gap-3">
             <React.Fragment>
               {isLiked ? (
-                <FavoriteIcon sx={{ color: "red", cursor: "pointer" }} onClick={handleLikeClick} />
+                <FavoriteIcon
+                  sx={{ color: "red", cursor: "pointer" }}
+                  onClick={handleLikeClick}
+                />
               ) : (
                 <FavoriteBorderIcon
-                  sx={{ color: "red", cursor: "pointer"}}
+                  sx={{ color: "red", cursor: "pointer" }}
                   onClick={handleLikeClick}
                 />
               )}
@@ -118,9 +121,15 @@ export default function PostCard(props) {
                 {likeCount}
               </Typography>
               {isSaved ? (
-                <BookmarkIcon sx={{ color: "blue", cursor: "pointer" }}onClick={handleSaveClick} />
+                <BookmarkIcon
+                  sx={{ color: "blue", cursor: "pointer" }}
+                  onClick={handleSaveClick}
+                />
               ) : (
-                <BookmarkBorderIcon sx={{ color: "blue", cursor: "pointer" }}onClick={handleSaveClick} />
+                <BookmarkBorderIcon
+                  sx={{ color: "blue", cursor: "pointer" }}
+                  onClick={handleSaveClick}
+                />
               )}
             </React.Fragment>
           </div>
@@ -130,9 +139,6 @@ export default function PostCard(props) {
               onClick={handleClickOpen("paper")}
             >
               More
-            </Button>
-            <Button sx={{ color: "white", textTransform: "initial" }}>
-              View
             </Button>
           </div>
         </CardActions>
@@ -162,7 +168,7 @@ export default function PostCard(props) {
             scrollbarWidth: "none",
           }}
         >
-          <div>{props.description}</div>
+          <div>{props.content}</div>
         </DialogContent>
         <DialogActions>
           <Button
