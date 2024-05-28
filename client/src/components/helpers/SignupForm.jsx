@@ -22,6 +22,10 @@ export default function SignupForm() {
     password: "",
     repassword: "",
   });
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevState) => !prevState);
@@ -44,7 +48,7 @@ export default function SignupForm() {
         );
         if (response.status === 200 && response.data.success) {
           localStorage.setItem("token", response.data.token);
-          localStorage.setItem("userID", response.data.userId.id);
+          localStorage.setItem("userID", response.data.userId);
           navigate("/feed");
         }
       } catch (error) {
@@ -61,7 +65,31 @@ export default function SignupForm() {
       alert("Passwords do not match");
     }
   };
-
+  const handleLogin = async (userData) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/login",
+        userData
+      );
+      if (response.status === 200 && response.data.success) {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userID", response.data.userId);
+        navigate("/feed");
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 401) {
+          alert("Invalid Email or Password");
+        } else {
+          alert("An unexpected error occurred");
+        }
+      } else if (error.request) {
+        console.error("No response received from server:", error.request);
+      } else {
+        console.error("Error in setting up request:", error.message);
+      }
+    }
+  };
   return (
     <Carousel
       className="rounded-xl h-full w-full"
@@ -140,8 +168,8 @@ export default function SignupForm() {
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
           <form
             onSubmit={(e) => {
-              e.preventDefault(); // Prevent default form submission behavior
-              handleSignup(signupData); // Call your signup function
+              e.preventDefault();
+              handleSignup(signupData);
             }}
           >
             <RevealNX>
@@ -283,7 +311,12 @@ export default function SignupForm() {
       </div>
       <div className="flex justify-center mt-2 md:mt-10 lg:mt-20 ">
         <div className="max-w-md w-full p-6 rounded-md shadow-md">
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleLogin(loginData);
+            }}
+          >
             <div className="mb-4 flex md:justify-center">
               <Link to="/" className="text-white text-xl font-bold">
                 <img
@@ -298,12 +331,15 @@ export default function SignupForm() {
                 type="text"
                 id="nameLogin"
                 name="nameLogin"
-                placeholder="Email or Username"
+                placeholder="Email"
                 style={{
                   border: "none",
                   borderBottom: "0.5px solid lightgray",
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                onChange={(e) => {
+                  setLoginData({ ...loginData, email: e.target.value });
+                }}
               />
             </div>
             <div className="mb-4 relative">
@@ -315,6 +351,9 @@ export default function SignupForm() {
                 style={{
                   border: "none",
                   borderBottom: "0.5px solid lightgray",
+                }}
+                onChange={(e) => {
+                  setLoginData({ ...loginData, password: e.target.value });
                 }}
                 className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
               />

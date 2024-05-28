@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import FeedSidebar from "./helpers/FeedSidebar";
 import FeedRightSideBar from "./helpers/FeedRightSideBar";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -8,7 +8,19 @@ import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
 import logo from "../images/StoryForgeLogo.png";
 import PersonIcon from "@mui/icons-material/Person";
+
+const isAuthenticated = () => {
+  return localStorage.getItem("token") !== null;
+};
+
 export default function Feed() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuthenticated()) {
+      navigate("/login");
+    }
+  }, [localStorage.getItem("token")]);
+
   return (
     <div className="w-screen h-screen flex flex-row bg-void">
       <div className="fixed top-0 left-0 flex items-center justify-center md:hidden w-full h-14 p-2 px-4 gap-3">
