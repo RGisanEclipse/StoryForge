@@ -1,17 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/StoryForgeLogo.png";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import SearchIcon from "@mui/icons-material/Search";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import { Avatar } from "@mui/material";
 import RevealNX from "../utils/RevealNX";
-export default function FeedSidebar() {
+
+export default function FeedSidebar(props) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
-    <nav className="p-4 h-full" style={{borderRight:"0.5px solid #3b3b3b"}}>
+    <nav className="p-4 h-full" style={{ borderRight: "0.5px solid #3b3b3b" }}>
       <div className="container mx-auto flex flex-col gap-3">
         <div className="hidden md:flex items-center justify-center xl:justify-start">
           <div className="hidden md:block">
@@ -30,17 +38,25 @@ export default function FeedSidebar() {
         </div>
         <RevealNX>
           <div className="flex items-center justify-center gap-5 xl:justify-start">
-            <div className="h-16 w-16 xl:h-18 xl:w-18">
-              <Avatar
-                style={{ height: "100%", width: "100%" }}
-                src={
-                  "https://pbs.twimg.com/profile_images/1676116130275143680/BkUKyvp7_400x400.jpg"
-                }
-              />
-            </div>
+            {props.userData && (
+              <div className="h-16 w-16 xl:h-18 xl:w-18">
+                <Avatar
+                  style={{ height: "100%", width: "100%" }}
+                  src={props.userData.avatarSrc}
+                />
+              </div>
+            )}
             <div className="hidden xl:flex flex-col">
-              <h1 className="text-white text-md">Rishab Guleria</h1>
-              <p className="text-gray-400 font-thin text-sm">@RGisanEclipse</p>
+              {props.userData && (
+                <>
+                  <h1 className="text-white text-md">
+                    {props.userData.firstName} {props.userData.lastName}
+                  </h1>
+                  <p className="text-gray-400 font-thin text-sm">
+                    @{props.userData.userName}
+                  </p>
+                </>
+              )}
             </div>
           </div>
           <div className="hidden md:flex flex-col font-montserrat gap-10 mt-7">
@@ -69,16 +85,19 @@ export default function FeedSidebar() {
               text="Create Story"
               to="/create"
             />
-            <SidebarItem
-              icon={<LogoutIcon style={{ fontSize: "35px" }} />}
-              text="Log Out"
-            />
+            <div onClick={handleLogout}>
+              <SidebarItem
+                icon={<LogoutIcon style={{ fontSize: "35px" }} />}
+                text="Log Out"
+              />
+            </div>
           </div>
         </RevealNX>
       </div>
     </nav>
   );
 }
+
 function SidebarItem({ icon, text, to }) {
   return (
     <Link to={to}>

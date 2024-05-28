@@ -8,13 +8,14 @@ import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered";
 import { Button } from "@mui/material";
 import "draft-js/dist/Draft.css";
 
-function StoryEditor() {
+function StoryEditor({ onContentChange, onSave }) {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
 
   const onChange = (editorState) => {
     setEditorState(editorState);
+    onContentChange(editorState.getCurrentContent().getPlainText());
   };
 
   const handleBoldClick = () => {
@@ -37,6 +38,10 @@ function StoryEditor() {
     onChange(RichUtils.toggleBlockType(editorState, "ordered-list-item"));
   };
 
+  const handleSaveClick = () => {
+    onSave();
+  };
+
   return (
     <div className="h-full w-full py-4 text-white">
       <h1 className="text-sm font-medium text-white">Content</h1>
@@ -48,7 +53,7 @@ function StoryEditor() {
           <ListIcon onClick={handleUnorderedListClick} className="cursor-pointer ml-2" />
           <FormatListNumberedIcon onClick={handleOrderedListClick} className="cursor-pointer ml-2" />
         </div>
-        <Button sx={{ color: "white", textTransform: "initial" }}>Save & Post</Button>
+        <Button onClick={handleSaveClick} sx={{ color: "white", textTransform: "initial" }}>Save & Post</Button>
       </div>
       <div className="mt-2 border h-5/6 p-2 rounded-lg">
         <div className="h-full">

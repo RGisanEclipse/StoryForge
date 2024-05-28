@@ -21,6 +21,7 @@ export default function SignupForm() {
     email: "",
     password: "",
     repassword: "",
+    avatarSrc: ""
   });
   const [loginData, setLoginData] = useState({
     email: "",

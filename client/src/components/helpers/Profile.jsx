@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Avatar } from "@mui/material";
 import RevealY from "../utils/RevealY";
 import { Button, Dialog } from "@material-tailwind/react";
@@ -6,6 +6,8 @@ import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import openedEyeImage from "../../images/Open-Eye.png";
 import closedEyeImage from "../../images/Closed-Eye.png";
 import DisplayPost from "./DisplayPost";
+import { useOutletContext } from "react-router-dom";
+
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -21,7 +23,8 @@ const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg",
 ];
 
-export default function Profile() {
+export default function Profile(props) {
+  const userData = useOutletContext();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [reEnterPasswordVisible, setReEnterPasswordVisible] = useState(false);
   const [open, setOpen] = useState(false);
@@ -56,18 +59,22 @@ export default function Profile() {
       reader.readAsDataURL(file);
     }
   };
+  if (!userData) {
+    return <div className="text-white">Loading...</div>;
+  }
+
   return (
     <div
       className="text-white h-full w-full p-5 overflow-y-auto"
       style={{ scrollbarWidth: "none" }}
     >
       <div className="flex justify-center flex-col items-center gap-2">
-        <Avatar src="" sx={{ width: 100, height: 100 }} />
+        <Avatar src={userData.avatarSrc} sx={{ width: 100, height: 100 }} />
         <div className="text-white font-montserrat text-2xl">
-          Rishab Guleria
+          {userData.firstName} {userData.lastName}
         </div>
         <div className="text-gray-400 font-montserrat text-lg">
-          @RGisanEclipse
+          @{userData.userName}
         </div>
       </div>
       <div className="flex flex-row justify-center items-center mt-2">
@@ -147,6 +154,30 @@ export default function Profile() {
               </label>
             </div>
             <div className="flex flex-col items-center">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="First Name"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                  outline: "none !important",
+                }}
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+              />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Last Name"
+                style={{
+                  border: "none",
+                  borderBottom: "0.5px solid lightgray",
+                  outline: "none !important",
+                }}
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+              />
               <input
                 type="text"
                 id="name"

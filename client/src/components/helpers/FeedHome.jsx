@@ -3,7 +3,6 @@ import PostCard from "./PostCard";
 import RevealY from "../utils/RevealY";
 export default function FeedHome() {
   const userID = localStorage.getItem("userID");
-  console.log(userID);
   const posts = [
     {
       authorProfile:

@@ -10,7 +10,7 @@ import {
   deleteDoc,
   addDoc,
   query,
-  where
+  where,
 } from "firebase/firestore/lite";
 import axios from "axios";
 const firebaseConfig = {
@@ -34,8 +34,7 @@ export async function addUser(userData) {
     const query2Snapshot = await getDocs(q2);
     if (!querySnapshot.empty) {
       return { error: "Email already exists" };
-    }
-    else if(!query2Snapshot.empty){
+    } else if (!query2Snapshot.empty) {
       return { error: "UserName already exists" };
     }
     const docRef = await addDoc(userObject, userData);
@@ -53,10 +52,13 @@ export async function verifyUser(userData) {
     if (!querySnapshot.empty) {
       const userDoc = querySnapshot.docs[0];
       const userFetchedData = userDoc.data();
-      const response = await axios.post("http://localhost:8080/verify-password", {
-        password: userData.password,
-        hashedPassword: userFetchedData.password,
-      });
+      const response = await axios.post(
+        "http://localhost:8080/verify-password",
+        {
+          password: userData.password,
+          hashedPassword: userFetchedData.password,
+        }
+      );
       return { ...response.data, userId: userDoc.id };
     } else {
       return { success: false, error: "User not found" };
@@ -66,3 +68,22 @@ export async function verifyUser(userData) {
     return { success: false, error: "Internal Server Error" };
   }
 }
+
+export async function fetchUserData(userID) {
+  try {
+    const userObject = collection(fireStoreObject, "users");
+    const userDocRef = doc(userObject, userID);
+    const userDocSnapshot = await getDoc(userDocRef);
+    
+    if (userDocSnapshot.exists()) { 
+      const userData = userDocSnapshot.data();
+      return userData;
+    } else {
+      throw new Error("User data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    throw error;
+  }
+}
+

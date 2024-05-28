@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { addUser, verifyUser }from "./config.js";
+import { addUser, verifyUser, fetchUserData } from "./config.js";
 import nodemailer from "nodemailer";
 import { config as dotenvConfig } from "dotenv";
 import { fileURLToPath } from "url";
@@ -44,8 +44,10 @@ const authenticateToken = (req, res, next) => {
     next();
   });
 };
+
 app.post("/signup", async (req, res) => {
-  const { firstName, lastName, userName, email, password } = req.body;
+  const { firstName, lastName, userName, email, password, avatarSrc } =
+    req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
@@ -55,6 +57,7 @@ app.post("/signup", async (req, res) => {
       userName,
       email,
       password: hashedPassword,
+      avatarSrc,
     });
 
     if (result.error === "UserName already exists") {
@@ -95,9 +98,18 @@ app.post("/login", async (req, res) => {
 
     if (result.success) {
       const token = generateToken({ id: result.userId });
-      res.status(200).json({ success: true, message: "User verified successfully", token, userId: result.userId });
+      res
+        .status(200)
+        .json({
+          success: true,
+          message: "User verified successfully",
+          token,
+          userId: result.userId,
+        });
     } else {
-      res.status(401).json({ success: false, error: "Invalid email or password" });
+      res
+        .status(401)
+        .json({ success: false, error: "Invalid email or password" });
     }
   } catch (error) {
     console.error("Error logging in:", error);
@@ -118,4 +130,20 @@ app.post("/verify-password", async (req, res) => {
     res.json({ success: false, error: "Internal Server Error" });
   }
 });
+
+app.get("/user-data", authenticateToken, async (req, res) => {
+  try {
+    const userId = req.query.userId;
+    const userData = await fetchUserData(userId);
+    res.status(200).json(userData);
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
+});
+
+app.post("/verify-token", authenticateToken, (req, res) => {
+  res.status(200).json({ success: true });
+});
+
 app.listen(8080, () => console.log("Server running at port number 8080"));
