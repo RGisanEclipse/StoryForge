@@ -7,6 +7,7 @@ import openedEyeImage from "../../images/Open-Eye.png";
 import closedEyeImage from "../../images/Closed-Eye.png";
 import DisplayPost from "./DisplayPost";
 import { useOutletContext } from "react-router-dom";
+import axios from "axios";
 
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
@@ -32,6 +33,11 @@ export default function Profile(props) {
   const [isFollowing, setIsFollowing] = useState(true);
   const bannerInput = useRef();
   const bannerImage = useRef(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
   const handleOpen = () => setOpen(!open);
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevState) => !prevState);
@@ -48,7 +54,6 @@ export default function Profile(props) {
   };
 
   const handleBannerImageChange = () => {
-    console.log("In handleBannerImageChange");
     const file = bannerInput.current.files[0];
     if (file) {
       console.log("File added");
@@ -59,6 +64,33 @@ export default function Profile(props) {
       reader.readAsDataURL(file);
     }
   };
+
+  const handleUpdateProfile = () => {
+    if (password === rePassword) {
+      const file = bannerInput.current.files[0];
+      const updateProfileData = {
+        firstName: firstName,
+        lastName: lastName,
+        userName: userName,
+        password: password,
+        file: file,
+        userID: localStorage.getItem("userID"),
+      };
+      axios
+      .post("http://localhost:8080/editProfile", updateProfileData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error uploading file:", error);
+      });
+    }
+  };
+
   if (!userData) {
     return <div className="text-white">Loading...</div>;
   }
@@ -156,8 +188,8 @@ export default function Profile(props) {
             <div className="flex flex-col items-center">
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="first-name"
+                name="first-name"
                 placeholder="First Name"
                 style={{
                   border: "none",
@@ -165,11 +197,13 @@ export default function Profile(props) {
                   outline: "none !important",
                 }}
                 className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="last-name"
+                name="last-name"
                 placeholder="Last Name"
                 style={{
                   border: "none",
@@ -177,11 +211,13 @@ export default function Profile(props) {
                   outline: "none !important",
                 }}
                 className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="username"
+                name="username"
                 placeholder="Username"
                 style={{
                   border: "none",
@@ -189,6 +225,8 @@ export default function Profile(props) {
                   outline: "none !important",
                 }}
                 className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
               <div className="mb-4 relative">
                 <input
@@ -201,6 +239,8 @@ export default function Profile(props) {
                     borderBottom: "0.5px solid lightgray",
                   }}
                   className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <button
                   type="button"
@@ -225,6 +265,8 @@ export default function Profile(props) {
                     borderBottom: "0.5px solid lightgray",
                   }}
                   className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                  value={rePassword}
+                  onChange={(e) => setRePassword(e.target.value)}
                 />
                 <button
                   type="button"
@@ -243,7 +285,13 @@ export default function Profile(props) {
                 </button>
               </div>
             </div>
-            <Button color="blue" onClick={handleOpen}>
+            <Button
+              color="blue"
+              onClick={() => {
+                handleOpen();
+                handleUpdateProfile();
+              }}
+            >
               <span>Confirm</span>
             </Button>
           </div>

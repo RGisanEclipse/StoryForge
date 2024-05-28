@@ -74,8 +74,8 @@ export async function fetchUserData(userID) {
     const userObject = collection(fireStoreObject, "users");
     const userDocRef = doc(userObject, userID);
     const userDocSnapshot = await getDoc(userDocRef);
-    
-    if (userDocSnapshot.exists()) { 
+
+    if (userDocSnapshot.exists()) {
       const userData = userDocSnapshot.data();
       return userData;
     } else {
@@ -84,6 +84,49 @@ export async function fetchUserData(userID) {
   } catch (error) {
     console.error("Error fetching user data:", error);
     throw error;
+  }
+}
+
+export async function uploadStory(userData) {
+  try {
+    const storyObject = collection(fireStoreObject, "stories");
+    const docRef = await addDoc(storyObject, userData);
+    return { id: docRef.id };
+  } catch (error) {
+    console.error("Error uploading story:", error);
+    return { error: error.message };
+  }
+}
+
+export async function updateProfile(userData) {
+  try {
+    const userRef = doc(fireStoreObject, "users", userData.userID);
+
+    if (userData.firstName.trim() !== "") {
+      await updateDoc(userRef, { firstName: userData.firstName });
+    }
+
+    if (userData.lastName.trim() !== "") {
+      await updateDoc(userRef, { lastName: userData.lastName });
+    }
+
+    if (userData.userName.trim() !== "") {
+      await updateDoc(userRef, { userName: userData.userName });
+    }
+
+    if (userData.password.trim() !== "") {
+      await updateDoc(userRef, { password: userData.password });
+    }
+
+    if (userData.fileName) {
+      const avatarSrc = `http://localhost:8080/uploads/${userData.fileName}`;
+      await updateDoc(userRef, { avatarSrc });
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error updating Profile:", error);
+    return { error: error.message };
   }
 }
 

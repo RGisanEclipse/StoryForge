@@ -2,18 +2,18 @@ import React, { useState, useRef } from "react";
 import { FileInput, Label } from "flowbite-react";
 import StoryEditor from "./StoryEditor";
 import { useOutletContext } from "react-router-dom";
-
+import axios from "axios";
 export default function Create() {
   const userData = useOutletContext();
   const [previewImage, setPreviewImage] = useState(null);
   const [storyTitle, setStoryTitle] = useState("");
   const [storyContent, setStoryContent] = useState("");
-  const [fileSelected, setFileSelected] = useState(false); 
-  const fileInputRef = useRef(); 
+  const [fileSelected, setFileSelected] = useState(false);
+  const fileInputRef = useRef();
 
   const handleFileInputChange = (event) => {
     handleFileChange(event);
-    setFileSelected(!!fileInputRef.current.files[0]); 
+    setFileSelected(!!fileInputRef.current.files[0]);
   };
 
   const handleFileChange = (event) => {
@@ -32,8 +32,20 @@ export default function Create() {
       title: storyTitle,
       content: storyContent,
       file: fileInputRef.current.files[0],
+      userID: localStorage.getItem("userID"),
     };
-    console.log(storyData); 
+    axios
+      .post("http://localhost:8080/uploadStory", storyData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error uploading file:", error);
+      });
   };
 
   return (
@@ -107,10 +119,11 @@ export default function Create() {
                 <span className="font-semibold">Click to upload</span>
               </p>
               <FileInput
+                name="mediaFile"
                 id="dropzone-file"
                 className="hidden"
                 onChange={handleFileInputChange}
-                ref={fileInputRef} 
+                ref={fileInputRef}
               />
             </Label>
           </div>

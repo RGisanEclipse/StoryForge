@@ -3,18 +3,38 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { addUser, verifyUser, fetchUserData } from "./config.js";
+import {
+  addUser,
+  verifyUser,
+  fetchUserData,
+  uploadStory,
+  updateProfile,
+} from "./config.js";
 import nodemailer from "nodemailer";
 import { config as dotenvConfig } from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import multer from "multer";
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use("/uploads", express.static("uploads"));
+app.use(express.urlencoded({ extended: true }));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const envPath = resolve(__dirname, ".env");
 dotenvConfig({ path: envPath });
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -98,14 +118,12 @@ app.post("/login", async (req, res) => {
 
     if (result.success) {
       const token = generateToken({ id: result.userId });
-      res
-        .status(200)
-        .json({
-          success: true,
-          message: "User verified successfully",
-          token,
-          userId: result.userId,
-        });
+      res.status(200).json({
+        success: true,
+        message: "User verified successfully",
+        token,
+        userId: result.userId,
+      });
     } else {
       res
         .status(401)
@@ -138,6 +156,53 @@ app.get("/user-data", authenticateToken, async (req, res) => {
     res.status(200).json(userData);
   } catch (error) {
     console.error("Error fetching user data:", error);
+    res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
+});
+
+app.post("/uploadStory", upload.single("file"), async (req, res) => {
+  const fileName = req.file.filename;
+  const userID = req.body.userID;
+  const title = req.body.title;
+  const content = req.body.content;
+  try {
+    const result = await uploadStory({
+      fileName,
+      userID,
+      title,
+      content,
+    });
+    res.status(200).json({ success: true, postID: result.id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
+});
+
+app.post("/editProfile", upload.single("file"), async (req, res) => {
+  try {
+    let fileName = "";
+    if (req.file) {
+      fileName = req.file.filename;
+    }
+    const userID = req.body.userID;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const userName = req.body.userName;
+    const password = req.body.password;
+
+    const result = await updateProfile({
+      fileName,
+      userID,
+      firstName,
+      lastName,
+      userName,
+      password,
+    });
+
+    res.status(200).json({ success: true, result });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 });
