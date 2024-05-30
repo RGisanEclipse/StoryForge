@@ -10,7 +10,6 @@ export default function FeedHome() {
       try {
         const response = await axios.get("https://storyforge.onrender.com/stories");
         setPosts(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
