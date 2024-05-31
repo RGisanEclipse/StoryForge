@@ -3,7 +3,6 @@ import Login from "./components/Login.jsx";
 import Feed from "./components/Feed.jsx";
 import FeedHome from "./components/helpers/FeedHome.jsx";
 import Create from "./components/helpers/Create.jsx";
-import "react-image-crop/dist/ReactCrop.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./components/helpers/Profile.jsx";
 import Explore from "./components/helpers/Explore.jsx";
