@@ -1,21 +1,21 @@
+@import 'flowbite/dist/flowbite.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'flowbite/dist/flowbite.css';
 
 @font-face {
     font-family: orbitron;
-    src: url("../public/fonts/Orbitron-VariableFont_wght.ttf");
+    src: url("/fonts/Orbitron-VariableFont_wght.ttf");
 }
 @font-face{
     font-family: russoOne;
-    src: url("../public/fonts/RussoOne-Regular.ttf");
+    src: url("/fonts/RussoOne-Regular.ttf");
 }
 @font-face{
     font-family: montserrat;
-    src: url("../public/fonts/Montserrat-VariableFont_wght.ttf");
+    src: url("/fonts/Montserrat-VariableFont_wght.ttf");
 }
 @font-face{
     font-family: manrope;
-    src: url("../public/fonts/Manrope-VariableFont_wght.ttf");
+    src: url("/fonts/Manrope-VariableFont_wght.ttf");
 }

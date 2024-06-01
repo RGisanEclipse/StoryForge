@@ -12,7 +12,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
   return (
     <nav className="bg-[#0b0338] p-4">
-      <div className="flex mx-10 items-center justify-between">
+      <div className="flex mx-1 md:mx-10 items-center justify-between">
         <div className="flex items-center">
           <div className="hidden md:block">
             <img
