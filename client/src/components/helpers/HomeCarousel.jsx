@@ -33,7 +33,7 @@ export default function CarouselTransition() {
           minWidth: "300px",
           maxHeight: "800px",
           maxWidth: "1200px",
-          height: "60vh",
+          height: "65vh",
           width: "80vw",
         }}
         className="mb-4 xl:my-20"
