@@ -11,7 +11,6 @@ import {
   updateProfile,
   fetchStoriesWithUserData
 } from "./config.js";
-import nodemailer from "nodemailer";
 import { config as dotenvConfig } from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
@@ -35,17 +34,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: false,
-  service: "gmail",
-  auth: {
-    user: process.env.NODEMAILER_USERNAME,
-    pass: process.env.NODEMAILER_PASSWORD,
-  },
-});
 const JWT_SECRET = "StoryForgeKey";
 
 function generateToken(user) {
@@ -89,21 +77,6 @@ app.post("/signup", async (req, res) => {
       res.status(402).json({ success: false, error: "Email already exists" });
     } else {
       const token = generateToken({ id: result.id });
-      transporter.sendMail(
-        {
-          from: process.env.NODEMAILER_USERNAME,
-          to: `${email}`,
-          subject: "Signup confirmation",
-          text: `Thanks for registering on StoryForge.`,
-        },
-        (error, info) => {
-          if (error) {
-            console.log(error);
-          } else {
-            console.log(info.response);
-          }
-        }
-      );
       res.status(200).json({ success: true, userId: result.id, token });
     }
   } catch (error) {
