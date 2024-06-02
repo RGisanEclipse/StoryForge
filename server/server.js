@@ -135,7 +135,7 @@ app.get("/user-data", authenticateToken, async (req, res) => {
 });
 
 app.post("/uploadStory", upload.single("file"), async (req, res) => {
-  const fileName = `http://localhost:8080/uploads/${req.file.filename}`;
+  const fileName = `https://storyforge.onrender.com/uploads/${req.file.filename}`;
   const userID = req.body.userID;
   const title = req.body.title;
   const content = req.body.content;
