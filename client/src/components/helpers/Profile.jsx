@@ -77,7 +77,7 @@ export default function Profile(props) {
         userID: localStorage.getItem("userID"),
       };
       axios
-      .post("http://localhost:8080/editProfile", updateProfileData, {
+      .post("https://storyforge.onrender.com/editProfile", updateProfileData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

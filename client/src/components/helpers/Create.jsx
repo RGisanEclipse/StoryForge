@@ -36,7 +36,7 @@ export default function Create() {
       userID: localStorage.getItem("userID"),
     };
     axios
-      .post("http://localhost:8080/uploadStory", storyData, {
+      .post("https://storyforge.onrender.com/uploadStory", storyData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

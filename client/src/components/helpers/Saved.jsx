@@ -7,7 +7,7 @@ export default function Saved() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await axios.get("http://localhost:8080/stories");
+        const response = await axios.get("https://storyforge.onrender.com/stories");
         setPosts(response.data);
         console.log(response.data);
       } catch (error) {

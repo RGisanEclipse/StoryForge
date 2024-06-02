@@ -18,7 +18,7 @@ const isAuthenticated = async () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:8080/verify-token",
+      "https://storyforge.onrender.com/verify-token",
       {},
       { headers: { Authorization: token } }
     );
@@ -41,7 +41,7 @@ export default function Feed() {
       } else {
         try {
           const userId = localStorage.getItem("userID");
-          const response = await axios.get("http://localhost:8080/user-data", {
+          const response = await axios.get("https://storyforge.onrender.com/user-data", {
             headers: { Authorization: localStorage.getItem("token") },
             params: { userId: userId },
           });
