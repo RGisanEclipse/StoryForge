@@ -44,7 +44,7 @@ export default function SignupForm() {
     if (userData.password === userData.repassword) {
       try {
         const response = await axios.post(
-          "http://localhost:8080/signup",
+          "https://storyforge.onrender.com/signup",
           userData
         );
         if (response.status === 200 && response.data.success) {
@@ -69,7 +69,7 @@ export default function SignupForm() {
   const handleLogin = async (userData) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/login",
+        "https://storyforge.onrender.com/login",
         userData
       );
       if (response.status === 200 && response.data.success) {
