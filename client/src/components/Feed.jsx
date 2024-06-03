@@ -66,7 +66,7 @@ export default function Feed() {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-row bg-void">
+    <div className="w-full h-full flex flex-row bg-void">
       <div className="fixed top-0 left-0 flex items-center justify-center md:hidden w-full h-14 p-2 px-4 gap-3">
         <img
           src={logo}
