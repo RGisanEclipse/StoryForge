@@ -6,21 +6,20 @@ import {
   updateDoc,
   doc,
   collection,
-  setDoc,
-  deleteDoc,
   addDoc,
   query,
   where,
 } from "firebase/firestore/lite";
 import axios from "axios";
+import 'dotenv/config';
 const firebaseConfig = {
-  apiKey: "AIzaSyBwiUdwkmSH3a9bUR8IUHyHIPeRTd5fWlI",
-  authDomain: "storyforge-606f2.firebaseapp.com",
-  projectId: "storyforge-606f2",
-  storageBucket: "storyforge-606f2.appspot.com",
-  messagingSenderId: "283072068015",
-  appId: "1:283072068015:web:92a9c1b2153c3f3b7ad75a",
-  measurementId: "G-7WX6T3CSX7",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 const firebaseapp = initializeApp(firebaseConfig);
 const fireStoreObject = getFirestore(firebaseapp);
