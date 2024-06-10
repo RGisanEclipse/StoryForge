@@ -50,8 +50,7 @@ export default function SignupForm() {
     setIsOpen(true);
   };
 
-  const handleSignup = async (e, userData) => {
-    e.preventDefault();
+  const handleSignup = async (userData) => {
     if (userData.password === userData.repassword) {
       try {
         const response = await axios.post(
@@ -80,8 +79,7 @@ export default function SignupForm() {
     }
   };
 
-  const handleLogin = async (e, userData) => {
-    e.preventDefault();
+  const handleLogin = async (userData) => {
     try {
       const response = await axios.post(
         "https://storyforge.onrender.com/login",
@@ -199,7 +197,7 @@ export default function SignupForm() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                handleSignup(e, signupData);
+                handleSignup(signupData);
               }}
             >
               <RevealNX>
