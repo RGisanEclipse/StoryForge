@@ -1,44 +1,50 @@
 .custom-shape-divider-bottom-1714759139 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
 .custom-shape-divider-bottom-1714759139 svg {
-    position: relative;
-    display: block;
-    width: 100%; /* Set width to 100% for responsiveness */
-    height: auto; /* Let the height adjust proportionally */
+  position: relative;
+  display: block;
+  width: 100%; /* Set width to 100% for responsiveness */
+  height: auto; /* Let the height adjust proportionally */
 }
 
 .custom-shape-divider-bottom-1714759139 .shape-fill {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 .custom-shape-divider-top-1714759530 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-top-1714759530 svg {
-    position: relative;
-    display: block;
-    width: calc(231% + 1.3px);
-    height: 100px;
+  position: relative;
+  display: block;
+  width: calc(231% + 1.3px);
+  height: 100px;
 }
 
 .custom-shape-divider-top-1714759530 .shape-fill {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 @media only screen and (max-width: 768px) {
-    .custom-shape-divider-bottom-1714759139 svg {
-        width: calc(120% + 1.3px); /* Adjust width for smaller screens */
-    }
+  .custom-shape-divider-bottom-1714759139 svg {
+    width: calc(120% + 1.3px); /* Adjust width for smaller screens */
+  }
+}
+.jodit_theme_summer {
+  --jd-color-background-default: #fafafa;
+  --jd-color-border: #655d83;
+  --jd-color-panel: #21215c;
+  --jd-color-icon: #ffffff;
 }

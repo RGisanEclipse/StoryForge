@@ -1,22 +1,42 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { FileInput, Label } from "flowbite-react";
-import StoryEditor from "./StoryEditor";
 import { useOutletContext } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import JoditEditor from "jodit-react";
+import "../../App.css"; 
+import { Button } from "@material-tailwind/react";
 export default function Create() {
   const userData = useOutletContext();
   const [previewImage, setPreviewImage] = useState(null);
   const [storyTitle, setStoryTitle] = useState("");
-  const [storyContent, setStoryContent] = useState("");
-  const [fileSelected, setFileSelected] = useState(false);
   const fileInputRef = useRef();
+  const editor = useRef(null);
+  const [content, setContent] = useState("");
   const navigate = useNavigate();
   const handleFileInputChange = (event) => {
     handleFileChange(event);
-    setFileSelected(!!fileInputRef.current.files[0]);
   };
-
+  const config = useMemo(
+    () => ({
+      placeholder: 'Type your story here',
+      "toolbarAdaptive": false,
+      useSearch: false,
+      toolbarButtonSize: "medium",
+      showCharsCounter: false,
+      showWordsCounter: false,
+      showXPathInStatusbar: false,
+      "buttons": "bold,italic,underline,eraser,ul,ol,fontsize,fullsize",
+      style:{
+        backgroundColor:"#0e0816",
+        color:"white",
+        maxHeight:"300px",
+        minHeight:"100px",
+        scrollbarWidth:"none"
+      }
+    }),
+    []
+  );
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -31,7 +51,7 @@ export default function Create() {
   const handleSaveStory = () => {
     const storyData = {
       title: storyTitle,
-      content: storyContent,
+      content: content,
       file: fileInputRef.current.files[0],
       userID: localStorage.getItem("userID"),
     };
@@ -42,7 +62,7 @@ export default function Create() {
         },
       })
       .then((response) => {
-        if(response.status===200){
+        if (response.status === 200) {
           alert("The Story was Uploaded");
           navigate("/feed");
         }
@@ -132,11 +152,18 @@ export default function Create() {
             </Label>
           </div>
         </div>
-        <StoryEditor
-          onContentChange={setStoryContent}
-          onSave={handleSaveStory}
+      </div>
+      <div className="mt-10">
+        <JoditEditor
+          ref={editor}
+          value={content}
+          onChange={(newContent) => {
+            setContent(newContent);
+          }}
+          config={config}
         />
       </div>
+      <Button onClick={handleSaveStory} className="my-7 w-40">Submit</Button>
     </div>
   );
 }

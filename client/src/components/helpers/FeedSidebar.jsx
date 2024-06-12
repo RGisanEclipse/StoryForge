@@ -19,7 +19,7 @@ export default function FeedSidebar(props) {
   };
 
   return (
-    <nav className="p-4 h-full" style={{ borderRight: "0.5px solid #3b3b3b" }}>
+    <nav className="p-4 h-full overflow-y-auto" style={{ borderRight: "0.5px solid #3b3b3b", scrollbarWidth: "none"}}>
       <div className="container mx-auto flex flex-col gap-3">
         <div className="hidden md:flex items-center justify-center xl:justify-start">
           <div className="hidden md:block">

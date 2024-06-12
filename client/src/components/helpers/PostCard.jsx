@@ -94,7 +94,7 @@ export default function PostCard(props) {
             </span>
           </div>
           <Typography variant="body2" className="text-white">
-            {props.overview}
+          <div dangerouslySetInnerHTML={{ __html: props.overview }} />
           </Typography>
         </CardContent>
         <CardActions
@@ -168,7 +168,7 @@ export default function PostCard(props) {
             scrollbarWidth: "none",
           }}
         >
-          <div>{props.content}</div>
+          <div dangerouslySetInnerHTML={{ __html: props.content }} />
         </DialogContent>
         <DialogActions>
           <Button

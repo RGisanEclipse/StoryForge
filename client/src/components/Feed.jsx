@@ -9,13 +9,11 @@ import CreateIcon from "@mui/icons-material/Create";
 import LogoutIcon from "@mui/icons-material/Logout";
 import logo from "../images/StoryForgeLogo.png";
 import PersonIcon from "@mui/icons-material/Person";
-
 const isAuthenticated = async () => {
   const token = localStorage.getItem("token");
   if (!token) {
     return false;
   }
-
   try {
     const response = await axios.post(
       "https://storyforge.onrender.com/verify-token",
@@ -77,10 +75,10 @@ export default function Feed() {
           STORY FORGE
         </h1>
       </div>
-      <div className="hidden md:block w-1/6 max-w-sm xl:w-1/5 h-full">
+      <div className="hidden md:block w-1/6 max-w-sm xl:w-1/5 h-screen">
         <FeedSidebar userData={userData} />
       </div>
-      <div className="h-full w-full md:w-5/6 xl:w-4/5 py-14 md:py-0">
+      <div className="h-screen w-full md:w-5/6 xl:w-4/5 py-14 md:py-0">
         <Outlet context={userData} />
       </div>
       <div className="hidden xl:block w-24 max-w-sm xl:w-1/5 h-screen pt-4">
