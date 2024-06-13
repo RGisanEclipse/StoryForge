@@ -9,7 +9,8 @@ import {
   fetchUserData,
   uploadStory,
   updateProfile,
-  fetchStoriesWithUserData
+  fetchStoriesWithUserData,
+  uploadFile
 } from "./config.js";
 import { config as dotenvConfig } from "dotenv";
 import { fileURLToPath } from "url";
@@ -24,15 +25,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const envPath = resolve(__dirname, ".env");
 dotenvConfig({ path: envPath });
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
-
+const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const JWT_SECRET = "StoryForgeKey";
 
@@ -135,20 +128,18 @@ app.get("/user-data", authenticateToken, async (req, res) => {
 });
 
 app.post("/uploadStory", upload.single("file"), async (req, res) => {
-  const fileName = `https://storyforge.onrender.com/uploads/${req.file.filename}`;
-  const userID = req.body.userID;
-  const title = req.body.title;
-  const content = req.body.content;
   try {
+    const downloadURL = await uploadFile(req.file);
     const result = await uploadStory({
-      fileName,
-      userID,
-      title,
-      content,
+      fileName: downloadURL,
+      userID: req.body.userID,
+      title: req.body.title,
+      content: req.body.content,
     });
+
     res.status(200).json({ success: true, postID: result.id });
   } catch (error) {
-    console.error(error);
+    console.error("Error uploading story:", error);
     res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 });
@@ -157,7 +148,8 @@ app.post("/editProfile", upload.single("file"), async (req, res) => {
   try {
     let fileName = "";
     if (req.file) {
-      fileName = req.file.filename;
+      const downloadURL = await uploadFile(req.file);
+      fileName = downloadURL;
     }
     const userID = req.body.userID;
     const firstName = req.body.firstName;

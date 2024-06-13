@@ -114,7 +114,7 @@ export default function SignupForm() {
           mount: { y: 0 },
           unmount: { y: 100 },
         }}
-        style={{position:"absolute", top:20, zIndex:50}}
+        style={{position:"absolute", top:20, zIndex:50, backgroundColor: "teal"}}
       >
         {alertText}
       </Alert>

@@ -10,8 +10,14 @@ import {
   query,
   where,
 } from "firebase/firestore/lite";
+import {
+  getStorage,
+  ref,
+  getDownloadURL,
+  uploadBytesResumable,
+} from "firebase/storage";
 import axios from "axios";
-import 'dotenv/config';
+import "dotenv/config";
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -23,6 +29,7 @@ const firebaseConfig = {
 };
 const firebaseapp = initializeApp(firebaseConfig);
 const fireStoreObject = getFirestore(firebaseapp);
+const storage = getStorage(firebaseapp);
 
 export async function addUser(userData) {
   try {
@@ -118,7 +125,7 @@ export async function updateProfile(userData) {
     }
 
     if (userData.fileName) {
-      const avatarSrc = `http://localhost:8080/uploads/${userData.fileName}`;
+      const avatarSrc = userData.fileName;
       await updateDoc(userRef, { avatarSrc });
     }
 
@@ -188,3 +195,20 @@ export async function fetchPostDataWithUserData(postID) {
   }
 }
 
+export async function uploadFile(file) {
+  try {
+    const dateTime = new Date().toISOString().replace(/:/g, "-");
+    const storageRef = ref(storage, `uploads/${file.originalname}-${dateTime}`);
+    const metadata = { contentType: file.mimetype };
+    const snapshot = await uploadBytesResumable(
+      storageRef,
+      file.buffer,
+      metadata
+    );
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    return downloadURL;
+  } catch (error) {
+    console.error("Error uploading file:", error);
+    throw error;
+  }
+}
