@@ -10,12 +10,13 @@ import {
   uploadStory,
   updateProfile,
   fetchStoriesWithUserData,
-  uploadFile
+  uploadFile,
 } from "./config.js";
 import { config as dotenvConfig } from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 import multer from "multer";
+import nodemailer from "nodemailer";
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -28,7 +29,14 @@ dotenvConfig({ path: envPath });
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const JWT_SECRET = "StoryForgeKey";
-
+const transporter = nodemailer.createTransport({
+  host: "smtp-relay.sendinblue.com",
+  port: 587,
+  auth: {
+    user: process.env.BREVO_EMAIL,
+    pass: process.env.BREVO_API_KEY,
+  },
+});
 function generateToken(user) {
   return jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: "1h" });
 }
@@ -69,6 +77,28 @@ app.post("/signup", async (req, res) => {
     } else if (result.error === "Email already exists") {
       res.status(402).json({ success: false, error: "Email already exists" });
     } else {
+      const mailOptions = {
+        from: `StoryForge <${process.env.YOUR_OWN_EMAIL}>`,
+        to: email,
+        subject: "Welcome to Our Platform",
+        text: `Dear ${userName},
+
+        Welcome aboard!
+
+        We are thrilled to have you join our community. Thank you for signing up with StoryForge. You are now part of a vibrant community of StoryTellers across the World!
+        
+        Best regards,
+        Team StoryForge.
+        `,
+      };
+      transporter
+        .sendMail(mailOptions)
+        .then((info) => {
+          console.log("Message sent: %s", info.messageId);
+        })
+        .catch((error) => {
+          console.error("Error occurred: %s", error.message);
+        });
       const token = generateToken({ id: result.id });
       res.status(200).json({ success: true, userId: result.id, token });
     }
