@@ -220,8 +220,9 @@ export default function SignupForm() {
                   style={{
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
+                    outline: "0" 
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none !important text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                   onChange={(e) => {
                     setSignUpData({ ...signupData, email: e.target.value });
                   }}
@@ -237,7 +238,7 @@ export default function SignupForm() {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                   onChange={(e) => {
                     setSignUpData({ ...signupData, userName: e.target.value });
                   }}
@@ -253,7 +254,7 @@ export default function SignupForm() {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                   onChange={(e) => {
                     setSignUpData({ ...signupData, password: e.target.value });
                   }}
@@ -280,7 +281,7 @@ export default function SignupForm() {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                   onChange={(e) => {
                     setSignUpData({
                       ...signupData,
@@ -369,7 +370,7 @@ export default function SignupForm() {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                   onChange={(e) => {
                     setLoginData({ ...loginData, email: e.target.value });
                   }}
@@ -388,7 +389,7 @@ export default function SignupForm() {
                   onChange={(e) => {
                     setLoginData({ ...loginData, password: e.target.value });
                   }}
-                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne"
+                  className="mt-1 p-2 w-full border-b border-opacity-10 bg-transparent focus:outline-none text-gray-200 placeholder:font-orbitron font-russoOne focus:ring-0"
                 />
                 <button
                   type="button"

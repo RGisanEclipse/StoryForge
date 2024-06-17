@@ -43,7 +43,7 @@ export default function FeedHome() {
           </div>
 
           <input
-            className="peer h-full w-full text-sm text-white pr-2 bg-transparent outline-none"
+            className="peer h-full w-full text-sm text-white pr-2 bg-transparent outline-none focus:ring-0"
             type="text"
             id="search"
             placeholder="Search"

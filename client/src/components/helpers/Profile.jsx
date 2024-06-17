@@ -198,7 +198,7 @@ export default function Profile(props) {
                   borderBottom: "0.5px solid lightgray",
                   outline: "none !important",
                 }}
-                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope focus:ring-0"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
@@ -212,7 +212,7 @@ export default function Profile(props) {
                   borderBottom: "0.5px solid lightgray",
                   outline: "none !important",
                 }}
-                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope focus:ring-0"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
@@ -226,7 +226,7 @@ export default function Profile(props) {
                   borderBottom: "0.5px solid lightgray",
                   outline: "none !important",
                 }}
-                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope focus:ring-0"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />
@@ -240,7 +240,7 @@ export default function Profile(props) {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                  className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope focus:ring-0"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -266,7 +266,7 @@ export default function Profile(props) {
                     border: "none",
                     borderBottom: "0.5px solid lightgray",
                   }}
-                  className="mt-1 p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope"
+                  className="p-2 w-80 bg-transparent focus:outline-none text-gray-200 placeholder:font-manrope font-manrope focus:ring-0"
                   value={rePassword}
                   onChange={(e) => setRePassword(e.target.value)}
                 />
