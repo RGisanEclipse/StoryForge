@@ -48,6 +48,9 @@ export default function SignupForm() {
   const showAlert = (message) => {
     setIsAlertText(message);
     setIsOpen(true);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 3000);
   };
 
   const handleSignup = async (userData) => {
